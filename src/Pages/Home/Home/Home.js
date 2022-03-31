@@ -6,6 +6,8 @@ import useFirebase from '../../../hooks/useFirebase';
 
 import Services from '../Services/Services';
 import HeroSection from '../HeroSection/HeroSection';
+import Team from '../Team/Team';
+import HomeBooks from '../HomeBooks/HomeBooks';
 
 
 const Home = () => {
@@ -15,7 +17,8 @@ const Home = () => {
 
                <HeroSection></HeroSection>
                <Services />
-               <AllReviews></AllReviews>
+               <HomeBooks></HomeBooks>
+               <Team></Team>
                <Blogs></Blogs>
                <Counter />
 

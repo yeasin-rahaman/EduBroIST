@@ -1,0 +1,4 @@
+.not-found {
+  background: linear-gradient(rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.05)),
+    url("./../../Assets/Images/bg-notFound.png") center center/cover no-repeat;
+}

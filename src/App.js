@@ -14,6 +14,38 @@ import AllSyllabus from './Pages/Services/AllSyllabus/AllSyllabus';
 import AllBlogs from './Pages/Services/AllBlogs/AllBlogs';
 import AllNotes from './Pages/Services/AllNotes/AllNotes';
 import AllLabs from './Pages/Services/AllLabs/AllLabs';
+import AdminDashboard from './Pages/AdminDashboard/AdminDashboard/AdminDashboard';
+import AdminRoute from './Login/AdminRoute/AdminRoute';
+import AdminWelcome from './Pages/AdminDashboard/AdminWelcome/AdminWelcome';
+import AdminQuestion from './Pages/AdminDashboard/AdminQuestion/AdminQuestion';
+import AdminBlogs from './Pages/AdminDashboard/AdminBlogs/AdminBlogs';
+import MakeAdmin from './Pages/AdminDashboard/MakeAdmin/MakeAdmin';
+import ManageQuestion from './Pages/AdminDashboard/ManageQuestions/ManageQuestion';
+import AdminSyllabus from './Pages/AdminDashboard/AdminSyllabus/AdminSyllabus';
+import AdminNotes from './Pages/AdminDashboard/AdminNotes/AdminNotes';
+import AdminBooks from './Pages/AdminDashboard/AdminBooks/AdminBooks';
+import AdminLabs from './Pages/AdminDashboard/AdminLabs/AdminLabs';
+import Dashboard from './Pages/UserDashboard/Dashboard/Dashboard';
+import DashboardWelcome from './Pages/UserDashboard/DashboardWelcome/DashboardWelcome';
+import MyQuestions from './Pages/UserDashboard/MyQuestions/MyQuestions';
+import MyBooks from './Pages/UserDashboard/MyBooks/MyBooks';
+import MySyllabus from './Pages/UserDashboard/MySyllabus/MySyllabus';
+import CustomerReview from './Pages/UserDashboard/CustomerReview/CustomerReview';
+import MyBlogs from './Pages/UserDashboard/MyBlogs/MyBlogs';
+import MyNotes from './Pages/UserDashboard/MyNotes/MyNotes';
+import MyLabs from './Pages/UserDashboard/MyLabs/MyLabs';
+import AddQuestionDashboard from './Pages/UserDashboard/AddQuestionDashboard/AddQuestionDashboard';
+import AddBooksDashboard from './Pages/UserDashboard/AddBooksDashboard/AddBooksDashboard';
+import AddSyllabusDashboard from './Pages/UserDashboard/AddSyllabusDashboard/AddSyllabusDashboard';
+import AddLabsDashboard from './Pages/UserDashboard/AddLabsDashboard/AddLabsDashboard';
+import AddNotesDashboard from './Pages/UserDashboard/AddNotesDashboard/AddNotesDashboard';
+import AddBlogsDashboard from './Pages/UserDashboard/AddBlogsDashboard/AddBlogsDashboard';
+import UserProfile from './Pages/UserDashboard/UserProfile/UserProfile';
+import EditProfile from './Pages/UserDashboard/UserProfile/EditProfile';
+import BlogDetails from './Pages/Services/AllBlogs/BlogDetails';
+import QuestionDetailsSolve from './Pages/Services/QuestionDetailsSolve/QuestionDetailsSolve';
+import Contact from './Pages/Contact/Contact';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 
 
@@ -39,21 +71,22 @@ function App() {
 
             {/* Admin Dashboard  */}
 
-            {/* <Route path='/admin-dashboard' element={<AdminRoute><AdminDashboard /></AdminRoute>}>
+            <Route path='/admin-dashboard' element={<AdminRoute><AdminDashboard /></AdminRoute>}>
               <Route path='/admin-dashboard' element={<AdminRoute><AdminWelcome /></AdminRoute>} />
               <Route path='/admin-dashboard/welcome' element={<AdminRoute><AdminWelcome /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-questions' element={<AdminRoute><AdminQuestion /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-blogs' element={<AdminRoute><AdminBlogs /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-notes' element={<AdminRoute><AdminNotes /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-books' element={<AdminRoute><AdminBooks /></AdminRoute>} />
+              <Route path='/admin-dashboard/admin-lab' element={<AdminRoute><AdminLabs /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-syllabus' element={<AdminRoute><AdminSyllabus /></AdminRoute>} />
               <Route path='/admin-dashboard/manage-questions' element={<AdminRoute><ManageQuestion /></AdminRoute>} />
               <Route path='/admin-dashboard/make-admin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
-            </Route> */}
+            </Route>
 
             {/* User Dashboard  */}
 
-            {/* <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="/dashboard" element={<Dashboard />}>
               <Route path='/dashboard' element={<DashboardWelcome />} />
               <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
               <Route path='/dashboard/my-questions' element={<MyQuestions />} />
@@ -76,7 +109,6 @@ function App() {
               <Route path='/dashboard/add-blogs' element={<AddBlogsDashboard />} />
               <Route path='/dashboard/user-profile' element={<UserProfile />} />
               <Route path='/dashboard/edit-profile' element={<EditProfile />} />
-              <Route path='/dashboard/pending-questions' element={<PendingQuestions />} />
             </Route>
 
             <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
@@ -86,9 +118,9 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='*' element={<ErrorPage />} />
-       
 
-         */}
+
+
 
           </Routes>
           <Footer />

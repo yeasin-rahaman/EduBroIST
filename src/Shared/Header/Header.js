@@ -2,13 +2,14 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
 
+
 import './Header.css'
 
 
 const Header = () => {
     const { userLogOut, user, toggle, setToggle, handleClick, admin } = useFirebase()
 
-
+    console.log(user.photoURL)
 
     return (
 
