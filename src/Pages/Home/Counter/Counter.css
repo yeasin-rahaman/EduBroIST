@@ -1,0 +1,57 @@
+.counter-area{
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+.single-counter{
+    border-radius: 10px;
+    transition: all .4s;
+    margin-bottom: 15px;
+}
+.single-counter:hover{
+    background-color: #1289A7;
+    color: white;
+}
+.single-counter:hover .counter-icon .icon{
+    color: white;
+}
+.counter-icon .icon{
+    font-size: 40px;
+    color: #1289A7;
+    transition: all .4s;
+}
+.counter-text h3 {
+    font-size: 48px;
+    margin-top: 15px;
+}
+.counter-text p{
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.counter-active{
+    background-color: #1289A7;
+    color: white;
+    transition: all .4s;
+}
+.counter-active .icon{
+    color: white;
+    transition: all .4s;
+}
+/* .counter-active:hover{
+    background-color: white;
+    color: black;
+}
+.counter-active:hover .icon{
+    color: #1289A7 !important;
+} */
+
+.section-title h3 {
+    font-size: 48px;
+    margin-bottom: 0;
+}
+.section-title span{
+    width: 90px;
+    height: 3px;
+    background-color: #1289A7;
+    display: inline-block;
+    margin-bottom: 10px;
+}

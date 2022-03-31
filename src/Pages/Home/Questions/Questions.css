@@ -1,0 +1,8 @@
+.user-desire-question {
+    position: relative;
+    font-size: 40px;
+    color: #75c7c3;
+    -webkit-text-stroke: 0.3vw #75c7c3;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+}
