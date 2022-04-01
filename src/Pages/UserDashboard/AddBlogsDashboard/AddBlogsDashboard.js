@@ -70,7 +70,6 @@ const AddBlogsDashboard = () => {
                             <input className='w-75 mb-3' {...register("topic", { required: true })} placeholder='Your Topic' /> <br />
                             <input className='w-75  mb-3' {...register("blog", { required: true })} placeholder='Blog' /> <br />
                             <input className='w-75 mb-3 form-input'
-                                //  {...register("BlogImg", { required: true })} placeholder='Blog Image URL' 
                                 type='file' onChange={handleFineInputChange} />  <br />
                             <button type='submit'>Submit</button>
                         </form>

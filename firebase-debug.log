@@ -1,0 +1,31 @@
+[debug] [2022-04-01T20:06:18.011Z] ----------------------------------------------------------------------
+[debug] [2022-04-01T20:06:18.012Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\YRS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-04-01T20:06:18.013Z] CLI Version:   10.5.0
+[debug] [2022-04-01T20:06:18.013Z] Platform:      win32
+[debug] [2022-04-01T20:06:18.013Z] Node Version:  v14.17.1
+[debug] [2022-04-01T20:06:18.014Z] Time:          Sat Apr 02 2022 02:06:18 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-04-01T20:06:18.014Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-01T20:06:18.068Z] Object ".hosting" in "firebase.json" has unknown property: {"additionalProperty":"hosting"}
+[debug] [2022-04-01T20:06:18.068Z] Field ".hosting" in "firebase.json" is possibly invalid: should be array
+[debug] [2022-04-01T20:06:18.068Z] Field ".hosting" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2022-04-01T20:06:18.071Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-01T20:06:18.071Z] > authorizing via signed-in user (edubro.ist@gmail.com)
+[debug] [2022-04-01T20:06:18.072Z] Object ".hosting" in "firebase.json" has unknown property: {"additionalProperty":"hosting"}
+[debug] [2022-04-01T20:06:18.072Z] Field ".hosting" in "firebase.json" is possibly invalid: should be array
+[debug] [2022-04-01T20:06:18.072Z] Field ".hosting" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  I:\programing-hero\End Game\EduBroIST\edubro-client
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+

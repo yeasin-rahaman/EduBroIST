@@ -35,10 +35,16 @@ const Header = () => {
                             Login
                         </Nav.Link>
                             :
-                            <img onClick={() => setToggle(!toggle)} src={user.photoURL ? user.photoURL : 'https://i.ibb.co/Xsnkx3L/user.png'} alt="user" className="user-image" />
+
+                            <>
+                                <Nav.Link as={NavLink} to="/dashboard/welcome" className='menu-item'>Dashboard</Nav.Link>
+                                <img onClick={() => setToggle(!toggle)} src={user.photoURL ? user.photoURL : 'https://i.ibb.co/Xsnkx3L/user.png'} alt="user" className="user-image" />
+                            </>
                         }
+
+
                         {user.displayName && <div className={toggle ? "toggle-menu shadow-lg active" : "toggle-menu"}>
-                            <Link onClick={handleClick} to={'/dashboard/welcome'}> <li>Dashboard</li></Link>
+
                             <Link to={'/'}><li onClick={userLogOut}>Log Out</li></Link>
                         </div>}
                     </Navbar.Collapse>

@@ -1,5 +1,4 @@
 import React from 'react';
-import AllReviews from '../AllReviews/AllReviews';
 import Blogs from '../Blogs/Blogs';
 import Counter from '../Counter/Counter';
 import useFirebase from '../../../hooks/useFirebase';
