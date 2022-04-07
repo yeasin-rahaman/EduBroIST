@@ -1,5 +1,6 @@
 import React from 'react';
 import Yeasin from '../../../Assets/Images/TeamMember/Yeasin.png'
+import Rakib from '../../../Assets/Images/TeamMember/rakib.png'
 import './Team.css'
 import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaPinterest } from 'react-icons/fa';
 const Team = () => {
@@ -41,7 +42,7 @@ const Team = () => {
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="400">
                             <div class="member-img">
-                                <img src={Yeasin} class="img-fluid" alt="" />
+                                <img src={Rakib} class="img-fluid" alt="" />
                                 <div class="social">
                                     <FaFacebook className='social-icon' />
                                     <FaInstagram className='social-icon' />

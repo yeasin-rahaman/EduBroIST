@@ -98,9 +98,6 @@ function App() {
               <Route path='/dashboard/my-labs' element={<MyLabs />} />
 
 
-
-
-
               <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
               <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
               <Route path='/dashboard/add-syllabus' element={<AddSyllabusDashboard />} />
@@ -111,17 +108,13 @@ function App() {
               <Route path='/dashboard/edit-profile' element={<EditProfile />} />
             </Route>
 
-            <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
 
+            <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='*' element={<ErrorPage />} />
-
-
-
-
           </Routes>
           <Footer />
         </BrowserRouter>

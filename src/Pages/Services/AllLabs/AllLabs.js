@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import LabsCart from './LabsCart'
 import ReactPaginate from 'react-paginate';
+import spinner from './../../../Assets/Images/Infinity-1s-200px.svg'
 
 
 const AllLabs = () => {
@@ -34,11 +35,12 @@ const AllLabs = () => {
         <div className="container text-black mt-5 mb-5" >
             <div className="d-flex my-5 justify-content-center"><h1 className="user-desire-question">Important Labs</h1></div>
             {
-                labs.length === 0 ? <div className='text-center'>
-                    <div class="spinner-border m-5" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
-                </div> :
+                labs.length === 0 ?
+                    <div className=" justify-content-center w-100 d-flex">
+                        <img src={spinner} alt="" />
+
+
+                    </div> :
                     <div className="row row-cols-1 row-cols-md-3 g-4">
                         {labs?.map((lab) => (
 
