@@ -43,6 +43,9 @@ const AllAssignments = () => {
                 setPageCount(pageNumber)
             })
     }, [department, year, semester, page, search]);
+
+    console.log(assignments);
+
     return (
         <div className="container text-black mt-5 mb-5" >
             <div className="row align-items-center">
@@ -93,7 +96,7 @@ const AllAssignments = () => {
                                 </label>
                             </div>
                         </form>
-
+                        {/* 
                         <div className='mt-3'>
                             <h5>Filter Year</h5>
                             <select onChange={(e) => setYear(e.target.value)} name="year" id="year">
@@ -112,7 +115,7 @@ const AllAssignments = () => {
                                 <option value="2011">2011</option>
                                 <option value="2010">2010</option>
                             </select>
-                        </div>
+                        </div> */}
                         <div className='mt-3'>
                             <h5>Semester</h5>
                             <select onChange={(e) => setSemester(e.target.value)} name="semester" id="semester">

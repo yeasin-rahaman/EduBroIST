@@ -6,7 +6,7 @@ import './Dashboard.css';
 import { FaThLarge, FaUser, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield, FaSchool } from 'react-icons/fa'
 
 const Dashboard = () => {
-    const { admin, userLogOut } = useFirebase()
+    const { userLogOut } = useFirebase()
     return (
         <div className='dashboard'>
             <Row>

@@ -6,11 +6,13 @@ import Swal from 'sweetalert2/dist/sweetalert2';
 
 const AddAssignmentDashboard = () => {
     const { user } = useFirebase()
+    const today = new Date().toISOString().slice(0, 10);
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.userName = user.displayName
         data.email = user.email
         data.status = 'Pending'
+        data.date = today
 
         fetch(`https://edubro.herokuapp.com/postAssignment`, {
             method: "POST",
@@ -36,7 +38,10 @@ const AddAssignmentDashboard = () => {
                             <form onSubmit={handleSubmit(onSubmit)}>
 
                                 <input className='w-75 mb-3'  {...register("subject", { required: true })} placeholder='Enter Course Title' /> <br />
+
                                 <input className='w-75 mb-3'  {...register("code", { required: true })} placeholder='Enter Course Code' /> <br />
+
+                                <input className='w-75 mb-3'  {...register("assignmentHeader", { required: true })} placeholder='Assignment Header' /> <br />
 
                                 <select {...register("department")}>
                                     <option value="ece">ECE</option>
@@ -57,7 +62,7 @@ const AddAssignmentDashboard = () => {
 
                                 </select>
 
-                                <select {...register("year")}>
+                                {/* <select {...register("year")}>
                                     <option value="">Select Year</option>
                                     <option value="2027">2027</option>
                                     <option value="2026">2026</option>
@@ -77,11 +82,12 @@ const AddAssignmentDashboard = () => {
                                     <option value="2012">2012</option>
                                     <option value="2011">2011</option>
                                     <option value="2010">2010</option>
-                                </select>
+                                </select> */}
 
+                                <br />
 
-
-                                <input className='w-75 mb-3' {...register("driveLink", { required: true })} placeholder='Assignment Link' /> <br />
+                                <input className='w-75 mb-3' {...register("driveLink", { required: false })} placeholder='File Link (Optional)' /> <br />
+                                <input className='w-75 mb-3'  {...register("assignmentDetails", { required: true })} placeholder='Assignment Details' /> <br />
 
                                 <button type='submit'>Submit</button>
                             </form>
