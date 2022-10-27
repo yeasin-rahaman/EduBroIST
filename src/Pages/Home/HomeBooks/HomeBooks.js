@@ -15,7 +15,10 @@ import { Autoplay, EffectCoverflow, Pagination } from "swiper";
 const HomeBooks = () => {
     return (
         <div className="py-5">
-            <h1 data-text="User Reviews" className="text-center my-3 user-reviews">Books Gallery</h1>
+            <div className="section-title text-center mb-5">
+                <h3>Books</h3>
+                <span></span>
+            </div>
             <>
                 <Swiper
                     effect={"coverflow"}

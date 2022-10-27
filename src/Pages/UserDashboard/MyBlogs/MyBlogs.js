@@ -12,7 +12,7 @@ const MyBlogs = () => {
     const [blogs, setBlogs] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myBlogs/${user?.email}`)
+        fetch(`https://edubro.herokuapp.com/myBlogs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBlogs(data));
     }, [user?.email, blogs]);
@@ -25,7 +25,7 @@ const MyBlogs = () => {
 
         const proceed = window.confirm('Are you sure you want to Cancel this blog')
         if (proceed) {
-            const url = `http://localhost:5000/deleteBlog/${id}`;
+            const url = `https://edubro.herokuapp.com/deleteBlog/${id}`;
             fetch(url, {
                 method: 'DELETE'
 

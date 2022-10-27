@@ -11,7 +11,7 @@ const AdminSyllabus = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/`)
+        fetch(`https://edubro.herokuapp.com/allSyllabus`)
             .then((res) => res.json())
             .then((data) => setSyllabus(data));
     }, [user?.email]);
@@ -19,7 +19,7 @@ const AdminSyllabus = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/SyllabusStatusUpdate/${id}`, {
+        fetch(`https://edubro.herokuapp.com/SyllabusStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -38,7 +38,7 @@ const AdminSyllabus = () => {
     return (
         < div className="container all-book-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Syllabus <span style={{ color: "#1289A7" }}>{syllabus.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Syllabus <span style={{ color: "#da942c" }}>{syllabus.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>

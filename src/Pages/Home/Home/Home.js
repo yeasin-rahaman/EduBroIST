@@ -13,16 +13,12 @@ const Home = () => {
      const { handleClick } = useFirebase()
      return (
           <div onClick={handleClick}>
-
                <HeroSection></HeroSection>
                <Services />
                <HomeBooks></HomeBooks>
                <Team></Team>
                <Blogs></Blogs>
                <Counter />
-
-
-
 
           </div>
      );

@@ -9,29 +9,31 @@ const Contact = () => {
     };
     return (
         <Container>
-            <Row>
+            <Row className='mt-5'>
 
                 <Col lg={6}>
                     <div className="contact-left">
                         <h3>Contact Us</h3>
-                        <p>If your looking for a Question-oriented approach, you can use this one from Edu-Bro's Contact Us page.</p>
+                        <p>If you are looking for a Question-oriented approach, you can use this one from Edu-Bro's Contact Us page.</p>
                         <div className="single-contact">
                             <span>Call us</span>
-                            <p>(+880)1964587745</p>
+                            <p>(+880)1675440454</p>
                         </div>
                         <div className="single-contact">
                             <span>EMAIL ADDRESS</span>
-                            <p>edubro.endgame@gmail.com</p>
+                            <p>edubro.ist@gmail.com</p>
                         </div>
                         <div className="single-contact">
-                            <span>STORE LOCATION</span>
-                            <p>Dhanmondi 32, Dhaka,Bangladesh</p>
+                            <span>LOCATION</span>
+                            <p>House # 54, Road # 15/A (Old-26),
+                                Dhanmondi (East of Shankar Bus Stand),
+                                Dhaka-1209.</p>
                         </div>
-                        <div className="single-contact">
+                        {/* <div className="single-contact">
                             <span>TIME:</span>
                             <p>Monday - Friday</p>
                             <p>08AM - 09PM</p>
-                        </div>
+                        </div> */}
                     </div>
                 </Col>
                 <Col lg={6}>

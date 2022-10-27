@@ -1,57 +1,67 @@
-.counter-area{
+.counter-area {
     padding-top: 100px;
     padding-bottom: 80px;
 }
-.single-counter{
+
+.single-counter {
     border-radius: 10px;
     transition: all .4s;
     margin-bottom: 15px;
 }
-.single-counter:hover{
-    background-color: #1289A7;
+
+.single-counter:hover {
+    background-color: #da942c;
     color: white;
 }
-.single-counter:hover .counter-icon .icon{
+
+.single-counter:hover .counter-icon .icon {
     color: white;
 }
-.counter-icon .icon{
+
+.counter-icon .icon {
     font-size: 40px;
-    color: #1289A7;
+    color: #da942c;
     transition: all .4s;
 }
+
 .counter-text h3 {
     font-size: 48px;
     margin-top: 15px;
 }
-.counter-text p{
+
+.counter-text p {
     margin-bottom: 0;
     font-weight: 600;
 }
-.counter-active{
-    background-color: #1289A7;
+
+.counter-active {
+    background-color: #da942c;
     color: white;
     transition: all .4s;
 }
-.counter-active .icon{
+
+.counter-active .icon {
     color: white;
     transition: all .4s;
 }
+
 /* .counter-active:hover{
     background-color: white;
     color: black;
 }
 .counter-active:hover .icon{
-    color: #1289A7 !important;
+    color: #da942c !important;
 } */
 
 .section-title h3 {
     font-size: 48px;
     margin-bottom: 0;
 }
-.section-title span{
+
+.section-title span {
     width: 90px;
     height: 3px;
-    background-color: #1289A7;
+    background-color: #da942c;
     display: inline-block;
     margin-bottom: 10px;
 }

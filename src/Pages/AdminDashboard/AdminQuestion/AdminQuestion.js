@@ -12,15 +12,15 @@ const AdminQuestion = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allquestions`)
+        fetch(`https://edubro.herokuapp.com/getAllQuestions`)
             .then((res) => res.json())
-            .then((data) => setQuestions(data.allQuestions));
-    }, [user?.email]);
-
+            .then((data) => setQuestions(data));
+    }, []);
+    console.log(questions);
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/QuestionStatusUpdate/${id}`, {
+        fetch(`https://edubro.herokuapp.com/QuestionStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -38,7 +38,7 @@ const AdminQuestion = () => {
     return (
         < div className="container all-question-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Questions <span style={{ color: "#1289A7" }}>{questions.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Questions <span style={{ color: "#da942c" }}>{questions?.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>

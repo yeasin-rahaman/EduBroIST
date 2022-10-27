@@ -1,19 +1,23 @@
-.login-form{
+.login-form {
     padding: 50px 0;
     box-shadow: 0 1px 3px #888;
 }
+
 .login-form input {
     outline: none;
     border: 0;
-    border-bottom: 1px solid #1289A7;;
+    border-bottom: 1px solid #da942c;
+    ;
     padding-left: 15px;
     border-radius: 30px;
     height: 40px;
 }
-.login-form button{
+
+.login-form button {
     outline: none;
     border: 2px solid transparent;
-    background: #1289A7;;
+    background: #da942c;
+    ;
     color: white;
     font-weight: 600;
     padding: 10px 70px;
@@ -21,12 +25,15 @@
     text-transform: uppercase;
     transition: all .4s;
 }
-.login-form button:hover{
-    border: 2px solid #1289A7;;
+
+.login-form button:hover {
+    border: 2px solid #da942c;
+    ;
     background-color: white;
-    color: #1289A7;;
+    color: #da942c;
+    ;
 }
 
-.google{
+.google {
     cursor: pointer;
 }

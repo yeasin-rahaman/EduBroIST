@@ -8,7 +8,7 @@ const MyNotes = () => {
     const [notes, setNotes] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mynotes/${user?.email}`)
+        fetch(`https://edubro.herokuapp.com/mynotes/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setNotes(data));
     }, [user?.email, notes]);
@@ -17,7 +17,7 @@ const MyNotes = () => {
 
         const proceed = window.confirm('Are you sure you want to Cancel this note')
         if (proceed) {
-            const url = `http://localhost:5000/deleteNote/${id}`;
+            const url = `https://edubro.herokuapp.com/deleteNote/${id}`;
             fetch(url, {
                 method: 'DELETE'
 
@@ -39,7 +39,7 @@ const MyNotes = () => {
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My notes</h2>
                 <Link to={'/dashboard/add-notes'}>
-                    <button className='add-btn btn-danger'>Add notes</button>
+                    <button className='btn-style'>Add notes</button>
                 </Link>
             </div>
             <table className="table table-dark" style={{ width: "100%" }}>

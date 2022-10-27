@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import QuestionCart from './QuestionCart';
 import ReactPaginate from 'react-paginate';
-import spinner from './../../../Assets/Images/Infinity-1s-200px.svg'
+
 const AllQuestions = () => {
 
     const [questions, setQuestions] = useState([]);
     const [department, setDepartment] = useState("")
+    const [search, setSearch] = useState("")
     const [semester, setSemester] = useState("")
     const [year, setYear] = useState("")
     const [page, setPage] = useState(0)
@@ -18,20 +19,22 @@ const AllQuestions = () => {
         setPage(data.selected);
     }
 
-    const handleSearch = (e) => {
+
+    const HandleSearch = (e) => {
         e.preventDefault()
+        setSearch(e.target.value)
     }
     // checkbox er value true or false return kore
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/allQuestions')
+    //     fetch('https://edubro.herokuapp.com/allQuestions')
     //         .then(res => res.json())
     //         .then(data => setQuestions(data))
     // }, [])
 
     useEffect(() => {
-        console.log(department, year, semester)
-        fetch(`http://localhost:5000/allQuestions?page=${page}&&size=${size}&&department=${department}&&year=${year}&&semester=${semester}`)
+        console.log(department, year, semester, search)
+        fetch(`https://edubro.herokuapp.com/allQuestions?page=${page}&&size=${size}&&department=${department}&&year=${year}&&semester=${semester}&&search=${search}`)
             .then(res => res.json())
             .then(data => {
                 setQuestions(data.allQuestions)
@@ -40,7 +43,7 @@ const AllQuestions = () => {
                 const pageNumber = Math.ceil(count / size)
                 setPageCount(pageNumber)
             })
-    }, [department, year, semester, page]);
+    }, [department, year, semester, page, search]);
 
 
     return (
@@ -52,9 +55,9 @@ const AllQuestions = () => {
                 </div>
                 <div className="col-md-6">
                     <div className="search-box mb-5">
-                        <form onSubmit={handleSearch}>
-                            <input type="text" name='search' placeholder='Search Questions' />
-                            <button type='submit'>Search</button>
+                        <form >
+                            <input type="text" name='search' onBlur={HandleSearch} placeholder='Search Questions' />
+                            <span >Search</span>
                         </form>
                     </div>
                 </div>
@@ -75,7 +78,7 @@ const AllQuestions = () => {
                                 </label>
                             </div>
                             <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="CSE" id="flexCheckDefault" />
+                                <input className="form-check-input" type="checkbox" value="cse" id="flexCheckDefault" />
                                 <label className="form-check-label fw-bold" for="flexCheckDefault">
                                     CSE
                                 </label>
@@ -83,7 +86,7 @@ const AllQuestions = () => {
                             <div className="form-check align-items-center">
                                 <input className="form-check-input" type="checkbox" value="ece" id="flexCheckDefault" />
                                 <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    EEE
+                                    ECE
                                 </label>
                             </div>
                             <div className="form-check align-items-center">
@@ -98,6 +101,7 @@ const AllQuestions = () => {
                             <h5>Filter Year</h5>
                             <select onChange={(e) => setYear(e.target.value)} name="year" id="year">
                                 <option value="">Select Year</option>
+                                <option value="2021">2022</option>
                                 <option value="2021">2021</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
@@ -115,19 +119,15 @@ const AllQuestions = () => {
                         <div className='mt-3'>
                             <h5>Semester</h5>
                             <select onChange={(e) => setSemester(e.target.value)} name="semester" id="semester">
-                                <option value="">Select Year</option>
-                                <option value="2021">2021</option>
-                                <option value="2020">2020</option>
-                                <option value="2019">2019</option>
-                                <option value="2018">2018</option>
-                                <option value="2017">2017</option>
-                                <option value="2016">2016</option>
-                                <option value="2015">2015</option>
-                                <option value="2014">2014</option>
-                                <option value="2013">2013</option>
-                                <option value="2012">2012</option>
-                                <option value="2011">2011</option>
-                                <option value="2010">2010</option>
+                                <option value="">Select Semester</option>
+                                <option value="1">1st</option>
+                                <option value="2">2nd</option>
+                                <option value="3">3rd</option>
+                                <option value="4">4th</option>
+                                <option value="5">5th</option>
+                                <option value="6">6th</option>
+                                <option value="7">7th</option>
+                                <option value="8">8th</option>
                             </select>
                         </div>
 
@@ -135,11 +135,9 @@ const AllQuestions = () => {
                 </div>
                 <div className="col-12 col-md-10">
                     {
-                        questions.length === 0 ?
-
-                            <div className=" justify-content-center w-100 d-flex">
-                                <img src={spinner} alt="" />
-                            </div> :
+                        questions.length === 0 ? <div className='text-center'><div class="spinner-border m-5" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div></div> :
                             <div className="row">
                                 {questions?.map((question) => (
                                     <QuestionCart

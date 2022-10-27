@@ -76,15 +76,15 @@ const Footer = () => {
                         </Col>
                         <Col md={3}>
                             <div className="footer-box">
-                                <h4>Subscribe Newsletter</h4>
-                                <div className="subscribe-form mt-4">
+                                <h4>Social Media</h4>
+                                {/* <div className="subscribe-form mt-4">
                                     <form onSubmit={handleSubmit}>
                                         <input onChange={(e) => setEmail(e.target.value)} type="email" required placeholder='Enter Email' />
                                         <button type='submit'>Subscribe <FaArrowRight className='link-icon' /></button>
                                     </form>
-                                </div>
+                                </div> */}
                                 <div className="footer-social mt-3">
-                                    <h5>Share Social Media</h5>
+                                    {/* <h5>Social Media</h5> */}
                                     <FaFacebook className='social-icon' />
                                     <FaInstagram className='social-icon' />
                                     <FaTwitter className='social-icon' />

@@ -19,42 +19,47 @@ const AdminDashboard = () => {
                         <ul>
                             <li>
                                 <NavLink to={`welcome`} style={({ isActive }) => ({
-                                    color: isActive ? "#1289A7" : "black",
+                                    color: isActive ? "#da942c" : "black",
                                 })}><FaThLarge className='me-1' /> Dashboard</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-questions`} style={({ isActive }) => ({
-                                    color: isActive ? "#1289A7" : "black",
+                                    color: isActive ? "#da942c" : "black",
                                 })}><FaBookmark className='me-1' /> Manage Questions</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`admin-assignments`} style={({ isActive }) => ({
+                                    color: isActive ? "#da942c" : "black",
+                                })}><FaBookmark className='me-1' /> Manage assignments</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`admin-blogs`} style={({ isActive }) => ({
-                                    color: isActive ? "#1289A7" : "black",
+                                    color: isActive ? "#da942c" : "black",
                                 })}><FaCommentDots className='me-1' /> Manage Blogs</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-books`} style={({ isActive }) => ({
-                                    color: isActive ? "#1289A7" : "black",
+                                    color: isActive ? "#da942c" : "black",
                                 })}><FaTasks className='me-1' /> Manage Books</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-syllabus`} style={({ isActive }) => ({
-                                    color: isActive ? "#1289A7" : "black",
+                                    color: isActive ? "#da942c" : "black",
                                 })}><FaTasks className='me-1' /> Manage Syllabus</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-lab`} style={({ isActive }) => ({
-                                    color: isActive ? "#1289A7" : "black",
+                                    color: isActive ? "#da942c" : "black",
                                 })}><FaTasks className='me-1' /> Manage Lab Report</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`admin-notes`} style={({ isActive }) => ({
-                                    color: isActive ? "#1289A7" : "black",
+                                    color: isActive ? "#da942c" : "black",
                                 })}><FaUserShield className='me-1' /> Manage Notes</NavLink>
                             </li>
                             <li>
                                 <NavLink to={`make-admin`} style={({ isActive }) => ({
-                                    color: isActive ? "#1289A7" : "black",
+                                    color: isActive ? "#da942c" : "black",
                                 })}><FaUser className='me-1' /> Make Admin</NavLink>
                             </li>
 

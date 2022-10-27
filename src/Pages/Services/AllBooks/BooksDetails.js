@@ -24,7 +24,7 @@ const BooksDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBooks/${id}`)
+        fetch(`https://edubro.herokuapp.com/allBooks/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setSelected(data)
@@ -37,7 +37,7 @@ const BooksDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/review/${id}`)
+        fetch(`https://edubro.herokuapp.com/review/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setReviews(data)
@@ -55,7 +55,7 @@ const BooksDetails = () => {
         data.email = user.email
 
 
-        fetch(`http://localhost:5000/addReview`, {
+        fetch(`https://edubro.herokuapp.com/addReview`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

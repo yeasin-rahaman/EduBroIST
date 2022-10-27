@@ -12,7 +12,7 @@ const AddBooksDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`http://localhost:5000/postBooks`, {
+        fetch(`https://edubro.herokuapp.com/postBooks`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -38,7 +38,7 @@ const AddBooksDashboard = () => {
                             <input className='w-75 mb-3'  {...register("subject", { required: true })} placeholder='Subject Name' /> <br />
                             <input className='w-75 mb-3' {...register("edition", { required: true })} placeholder='Book Edition' /> <br />
                             <input className='w-75 mb-3' {...register("year", { required: true })} placeholder='Year' /> <br />
-                            <input className='w-75 mb-3' {...register("driveLink", { required: true })} placeholder='Question Link' /> <br />
+                            <input className='w-75 mb-3' {...register("driveLink", { required: true })} placeholder='Book Link' /> <br />
                             <button type='submit'>Submit</button>
                         </form>
 

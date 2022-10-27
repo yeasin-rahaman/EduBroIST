@@ -1,15 +1,16 @@
 .hero-section {
   position: relative;
-  background-image: url("../../../Assets/Images/Banner.png");
+  background-image: url("../../../Assets/Images/Banner.jpg");
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 1;
 }
-.hero-section::before{
+
+.hero-section::before {
   position: absolute;
-  content:"";
+  content: "";
   background-color: black;
   width: 100%;
   left: 0;

@@ -48,7 +48,7 @@ const Services = () => {
                     <Col md={4}>
                         <div className="single-service shadow">
                             <h3>Educational Blogs</h3>
-                            <p>A;so you will find blogs about many educational topics. What will be very helpfull of enrich your knowledge.</p>
+                            <p>Also you will find blogs about many educational topics. What will be very helpfull of enrich your knowledge.</p>
                         </div>
                     </Col>
                 </Row>

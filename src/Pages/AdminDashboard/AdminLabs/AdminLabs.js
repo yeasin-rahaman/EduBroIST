@@ -12,7 +12,7 @@ const AdminLabs = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allLabs`)
+        fetch(`https://edubro.herokuapp.com/allLabs`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
     }, [user?.email]);
@@ -20,7 +20,7 @@ const AdminLabs = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/labsStatusUpdate/${id}`, {
+        fetch(`https://edubro.herokuapp.com/labsStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -58,9 +58,9 @@ const AdminLabs = () => {
                     <tbody key={lab._id}>
                         <tr role="row" style={{ note: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{lab.labName}</td>
+                            <td>{lab?.labName}</td>
 
-                            <td>{lab.email}</td>
+                            <td>{lab?.email}</td>
                             {/* 
                     <td> <iframe title="question" src={download}
         className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>

@@ -26,11 +26,11 @@ const QuestionCart = ({ data }) => {
 
                         <div className="card-body">
                             <h4 className="card-title mb-3">{subject}</h4>
-                            <h5 className="card-title">Department: {department}</h5>
+                            <h5 className="card-title">Department: <span className='department'  >{department}</span> </h5>
                             <h5 className="card-title">Semester: {semester}</h5>
                             <div className='d-flex justify-content-between'>
                                 <h5 className="card-title">Subject Code: {code}</h5>
-                                <h5 className="card-text ">Year: {year}</h5>
+                                <h5 className="card-text " >Year: {year}</h5>
                             </div>
                             <div className='buttons' >
                                 <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>

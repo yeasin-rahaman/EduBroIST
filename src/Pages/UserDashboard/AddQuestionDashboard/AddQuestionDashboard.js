@@ -12,7 +12,7 @@ const AddQuestionDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`http://localhost:5000/postQuestion`, {
+        fetch(`https://edubro.herokuapp.com/postQuestion`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

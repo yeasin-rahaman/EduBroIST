@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
 
@@ -21,13 +21,19 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav onClick={handleClick} className="ms-auto menu d-flex align-items-center">
 
-                            <Nav.Link as={NavLink} to="/allQuestions" className='menu-item'>Questions</Nav.Link>
-                            <Nav.Link as={NavLink} to="/allSyllabus" className='menu-item'>Syllabus</Nav.Link>
-                            <Nav.Link as={NavLink} to="/allBlogs" className='menu-item'>Blogs</Nav.Link>
-                            <Nav.Link as={NavLink} to="/allNotes" className='menu-item'>Notes</Nav.Link>
-                            <Nav.Link as={NavLink} to="/allLabs" className='menu-item'>Labs</Nav.Link>
-                            {/* <Nav.Link as={NavLink} to="/forum" className='menu-item'>Forums</Nav.Link> */}
-                            <Nav.Link as={NavLink} to="/allBooks" className='menu-item'>All BOOKS</Nav.Link>
+                            <Nav.Link as={NavLink} to="/questions" className='menu-item'>Questions</Nav.Link>
+                            <Nav.Link as={NavLink} to="/assignments" className='menu-item'>Assignments</Nav.Link>
+                            <NavDropdown className='me-3 menu-item' title="More" id="navbarScrollingDropdown" >
+                                <NavDropdown.Item as={NavLink} to="/syllabus" >Syllabus</NavDropdown.Item>
+
+                                <NavDropdown.Item as={NavLink} to="/blogs" >Blogs</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/notes" >Notes</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/labs" >Labs</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/books" >All BOOKS</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                            </NavDropdown>
+
+
                             <Nav.Link as={NavLink} to="/contact" className='menu-item'>Contact</Nav.Link>
                             {admin ? <Nav.Link as={NavLink} to="/admin-dashboard/welcome" className='menu-item'>Admin Dashboard</Nav.Link> : ""}
                         </Nav>

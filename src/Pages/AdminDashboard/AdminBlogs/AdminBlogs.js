@@ -11,7 +11,7 @@ const AdminBlogs = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBlogs`)
+        fetch(`https://edubro.herokuapp.com/allBlogs`)
             .then((res) => res.json())
             .then((data) => setBlogs(data));
     }, [user?.email]);
@@ -19,7 +19,7 @@ const AdminBlogs = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/BlogStatusUpdate/${id}`, {
+        fetch(`https://edubro.herokuapp.com/BlogStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -39,7 +39,7 @@ const AdminBlogs = () => {
     return (
         < div className="container all-blog-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Blogs <span style={{ color: "#1289A7" }}>{blogs.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Blogs <span style={{ color: "#da942c" }}>{blogs.length}</span>  </h1>
             </div>
             <table className="table table-gray" style={{ width: "100%" }}>
                 <thead  >

@@ -12,13 +12,35 @@ const MyQuestions = () => {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myQuestions/${user?.email}`)
+        fetch(`https://edubro.herokuapp.com/myQuestions/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
                 setQuestions(data)
             });
     }, [user?.email]);
+
+
+    // delete method  
+
+    const handleQuestionDeleteRequest = id => {
+        const proceed = window.confirm('Are you sure you want to Cancel this lab')
+        if (proceed) {
+            const url = `https://edubro.herokuapp.com/deleteQuestion/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = questions?.filter(lab => lab._id !== id);
+                        setQuestions(remaining);
+                    }
+                })
+        }
+    }
+
 
     return (
         <div className='my-questions'>
@@ -60,7 +82,7 @@ const MyQuestions = () => {
                             <td>{question.status}</td>
                             <td> <button
                                 className="btn-style download-btn"
-                            // onClick={() => handlequestionDeleteRequest(question._id)}
+                                onClick={() => handleQuestionDeleteRequest(question._id)}
                             >
                                 Delete question
                             </button></td>

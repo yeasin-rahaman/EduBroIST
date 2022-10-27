@@ -13,7 +13,7 @@ const AdminNotes = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allNotes`)
+        fetch(`https://edubro.herokuapp.com/allNotes`)
             .then((res) => res.json())
             .then((data) => setNotes(data));
     }, [user?.email]);
@@ -21,7 +21,7 @@ const AdminNotes = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/notesStatusUpdate/${id}`, {
+        fetch(`https://edubro.herokuapp.com/notesStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -41,7 +41,7 @@ const AdminNotes = () => {
     return (
         < div className="container all-note-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Notes <span style={{ color: "#1289A7" }}>{notes.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Notes <span style={{ color: "#da942c" }}>{notes.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>

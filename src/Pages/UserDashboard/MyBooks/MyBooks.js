@@ -9,7 +9,7 @@ const MyBooks = () => {
     const [books, setBooks] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myBooks/${user?.email}`)
+        fetch(`https://edubro.herokuapp.com/myBooks/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setBooks(data));
     }, [user?.email, books]);
@@ -20,7 +20,7 @@ const MyBooks = () => {
 
         const proceed = window.confirm('Are you sure you want to Cancel this book')
         if (proceed) {
-            const url = `http://localhost:5000/deleteBook/${id}`;
+            const url = `https://edubro.herokuapp.com/deleteBook/${id}`;
             fetch(url, {
                 method: 'DELETE'
 

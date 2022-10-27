@@ -10,7 +10,7 @@ const MyLabs = () => {
     const [labs, setLabs] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myLabs/${user?.email}`)
+        fetch(`https://edubro.herokuapp.com/myLabs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
     }, [user?.email, labs]);
@@ -20,7 +20,7 @@ const MyLabs = () => {
 
         const proceed = window.confirm('Are you sure you want to Cancel this lab')
         if (proceed) {
-            const url = `http://localhost:5000/deleteLab/${id}`;
+            const url = `https://edubro.herokuapp.com/deleteLab/${id}`;
             fetch(url, {
                 method: 'DELETE'
 

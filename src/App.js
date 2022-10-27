@@ -46,6 +46,11 @@ import BlogDetails from './Pages/Services/AllBlogs/BlogDetails';
 import QuestionDetailsSolve from './Pages/Services/QuestionDetailsSolve/QuestionDetailsSolve';
 import Contact from './Pages/Contact/Contact';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import AllAssignments from './Pages/Services/AllAssignments/AllAssignments';
+import AssignmentSolve from './Pages/Services/AssignmentSolve/AssignmentSolve';
+import MyAssignment from './Pages/UserDashboard/MyAssignment/MyAssignment';
+import AdminAssignment from './Pages/AdminDashboard/AdminAssignment/AdminAssignment';
+import AddAssignmentDashboard from './Pages/UserDashboard/AddAssignmentDashboard copy/AddAssignmentDashboard';
 
 
 
@@ -61,12 +66,13 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Home />} />
-            <Route path="/allQuestions" element={<AllQuestions />} />
-            <Route path="/allBooks" element={<AllBooks />} />
-            <Route path="/allSyllabus" element={<AllSyllabus />} />
-            <Route path="/allBlogs" element={<AllBlogs />} />
-            <Route path="/allNotes" element={<AllNotes />} />
-            <Route path="/allLabs" element={<AllLabs />} />
+            <Route path="/questions" element={<AllQuestions />} />
+            <Route path="/books" element={<AllBooks />} />
+            <Route path="/syllabus" element={<AllSyllabus />} />
+            <Route path="/blogs" element={<AllBlogs />} />
+            <Route path="/notes" element={<AllNotes />} />
+            <Route path="/labs" element={<AllLabs />} />
+            <Route path="/assignments" element={<AllAssignments />} />
 
 
             {/* Admin Dashboard  */}
@@ -75,6 +81,7 @@ function App() {
               <Route path='/admin-dashboard' element={<AdminRoute><AdminWelcome /></AdminRoute>} />
               <Route path='/admin-dashboard/welcome' element={<AdminRoute><AdminWelcome /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-questions' element={<AdminRoute><AdminQuestion /></AdminRoute>} />
+              <Route path='/admin-dashboard/admin-assignments' element={<AdminRoute><AdminAssignment /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-blogs' element={<AdminRoute><AdminBlogs /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-notes' element={<AdminRoute><AdminNotes /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-books' element={<AdminRoute><AdminBooks /></AdminRoute>} />
@@ -90,6 +97,7 @@ function App() {
               <Route path='/dashboard' element={<DashboardWelcome />} />
               <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
               <Route path='/dashboard/my-questions' element={<MyQuestions />} />
+              <Route path='/dashboard/my-assignments' element={<MyAssignment />} />
               <Route path='/dashboard/my-books' element={<MyBooks />} />
               <Route path='/dashboard/my-syllabus' element={<MySyllabus />} />
               <Route path='/dashboard/user-review' element={<CustomerReview />} />
@@ -98,7 +106,11 @@ function App() {
               <Route path='/dashboard/my-labs' element={<MyLabs />} />
 
 
+
+
+
               <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
+              <Route path='/dashboard/add-assignment' element={<AddAssignmentDashboard />} />
               <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
               <Route path='/dashboard/add-syllabus' element={<AddSyllabusDashboard />} />
               <Route path='/dashboard/add-labs' element={<AddLabsDashboard />} />
@@ -108,13 +120,18 @@ function App() {
               <Route path='/dashboard/edit-profile' element={<EditProfile />} />
             </Route>
 
-
             <Route path='/question-details/:id' element={<QuestionDetailsSolve />} />
+            <Route path='/assignment-details/:id' element={<AssignmentSolve />} />
+
             <Route path='/blog-details/:id' element={<BlogDetails />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='*' element={<ErrorPage />} />
+
+
+
+
           </Routes>
           <Footer />
         </BrowserRouter>

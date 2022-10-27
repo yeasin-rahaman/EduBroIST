@@ -13,7 +13,7 @@ const HeroSection = () => {
                                     <h1 className="text-white fw-bold  display-2">
                                         <Typewriter
                                             options={{
-                                                strings: ["Question Bank Where Students can find Solution"],
+                                                strings: ["One Stop Solution for Students"],
                                                 autoStart: true,
                                                 loop: true,
                                             }}
