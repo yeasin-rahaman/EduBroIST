@@ -7,7 +7,7 @@ const AllAssignments = () => {
     const [department, setDepartment] = useState("")
     const [search, setSearch] = useState("")
     const [semester, setSemester] = useState("")
-    const [year, setYear] = useState("")
+
     const [page, setPage] = useState(0)
     const [pageCount, setPageCount] = useState(0)
     const size = 10;
@@ -32,8 +32,7 @@ const AllAssignments = () => {
     // }, [])
 
     useEffect(() => {
-        console.log(department, year, semester, search)
-        fetch(`https://edubro.herokuapp.com/allAssignments?page=${page}&&size=${size}&&department=${department}&&year=${year}&&semester=${semester}&&search=${search}`)
+        fetch(`https://edubro.herokuapp.com/allAssignments?page=${page}&&size=${size}&&department=${department}&&semester=${semester}&&search=${search}`)
             .then(res => res.json())
             .then(data => {
                 setAssignments(data.allAssignments)
@@ -42,7 +41,7 @@ const AllAssignments = () => {
                 const pageNumber = Math.ceil(count / size)
                 setPageCount(pageNumber)
             })
-    }, [department, year, semester, page, search]);
+    }, [department, semester, page, search]);
 
     console.log(assignments);
 

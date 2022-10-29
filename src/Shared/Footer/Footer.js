@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './Footer.css';
 import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaPinterest } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+
 
 const Footer = () => {
-    const [email, setEmail] = useState("")
 
     return (
         <footer className='footer-area pt-5 pb-3 mt-5'>

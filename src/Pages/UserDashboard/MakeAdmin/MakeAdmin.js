@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Swal } from 'sweetalert2/dist/sweetalert2';
 
 const MakeAdmin = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         // console.log(data)
         fetch('https://edubro.herokuapp.com/users/admin', {

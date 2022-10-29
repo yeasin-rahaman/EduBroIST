@@ -11,7 +11,7 @@ const AssignmentCart = ({ data }) => {
 
 
 
-    const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
+    // const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
     return (
         <div className='py-5 '>

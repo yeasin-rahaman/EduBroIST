@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Swal } from 'sweetalert2/dist/sweetalert2';
-import useFirebase from '../../../hooks/useFirebase';
+
 
 const AdminQuestion = () => {
 
 
     const [questions, setQuestions] = useState([])
-    const { user } = useFirebase()
     console.log(questions)
 
     const [status, setStatus] = useState('')

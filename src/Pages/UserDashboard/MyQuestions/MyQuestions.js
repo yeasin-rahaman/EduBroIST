@@ -24,7 +24,7 @@ const MyQuestions = () => {
     // delete method  
 
     const handleQuestionDeleteRequest = id => {
-        const proceed = window.confirm('Are you sure you want to Cancel this lab')
+        const proceed = window.confirm('Are you sure you want to Cancel this Question')
         if (proceed) {
             const url = `https://edubro.herokuapp.com/deleteQuestion/${id}`;
             fetch(url, {

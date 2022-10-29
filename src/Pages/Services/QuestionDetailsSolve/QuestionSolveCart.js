@@ -1,7 +1,7 @@
 import React from 'react';
 
 const QuestionSolveCart = ({ data }) => {
-    const { subject, year, code, solveDriveLink, email, topic, userName, solveNumber, department } = data
+    const { subject, year, code, solveDriveLink, email, userName, solveNumber, department } = data
 
 
     let googleId = solveDriveLink?.slice(32, 65);
