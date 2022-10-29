@@ -74,10 +74,11 @@
 }
 
 .toggle-menu {
+     text-align: center;
      width: 150px;
-     background-color: #51a5b9;
+     background-color: #8a0000;
      position: absolute;
-     right: 20px;
+     right: 1.5rem;
      bottom: -65px;
      display: none;
      z-index: 150;

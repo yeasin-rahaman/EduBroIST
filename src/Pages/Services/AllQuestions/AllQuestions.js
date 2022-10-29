@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import QuestionCart from './QuestionCart';
 import ReactPaginate from 'react-paginate';
-
+import spinner from './../../../Assets/Images/Spinner.svg';
 const AllQuestions = () => {
 
     const [questions, setQuestions] = useState([]);
@@ -135,9 +135,9 @@ const AllQuestions = () => {
                 </div>
                 <div className="col-12 col-md-10">
                     {
-                        questions.length === 0 ? <div className='text-center'><div class="spinner-border m-5" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div></div> :
+                        questions.length === 0 ? <div className=" justify-content-center w-100 d-flex">
+                            <img src={spinner} alt="" />
+                        </div> :
                             <div className="row">
                                 {questions?.map((question) => (
                                     <QuestionCart
@@ -175,8 +175,6 @@ const AllQuestions = () => {
 
 
             </div >
-
-            {/* : <div><h5>Loading...</h5></div>} */}
 
 
 

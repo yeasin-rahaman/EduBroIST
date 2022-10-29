@@ -34,11 +34,12 @@ const Footer = () => {
                                 <h4>Useful Category</h4>
                                 <div className="links mt-4">
                                     <ul>
-                                        <Link to={'/allQuestions'}><li> <FaArrowRight className='link-icon' />All Questions</li></Link>
-                                        <Link to={'/allSyllabus'}><li> <FaArrowRight className='link-icon' />All Syllabus</li></Link>
-                                        <Link to={'/allBlogs'}><li> <FaArrowRight className='link-icon' />All Blogs</li></Link>
-                                        <Link to={'/allNotes'}><li> <FaArrowRight className='link-icon' />All Notes</li></Link>
-                                        <Link to={'/allLabs'}><li> <FaArrowRight className='link-icon' />All Labs</li></Link>
+                                        <Link to={'/questions'}><li> <FaArrowRight className='link-icon' />All Questions</li></Link>
+                                        <Link to={'/assignments'}><li> <FaArrowRight className='link-icon' />All Assignments</li></Link>
+                                        <Link to={'/syllabus'}><li> <FaArrowRight className='link-icon' />All Syllabus</li></Link>
+                                        <Link to={'/blogs'}><li> <FaArrowRight className='link-icon' />All Blogs</li></Link>
+                                        <Link to={'/notes'}><li> <FaArrowRight className='link-icon' />All Notes</li></Link>
+                                        <Link to={'/labs'}><li> <FaArrowRight className='link-icon' />All Labs</li></Link>
                                     </ul>
                                 </div>
                             </div>

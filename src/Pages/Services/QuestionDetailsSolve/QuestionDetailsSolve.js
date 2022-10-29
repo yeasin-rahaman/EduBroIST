@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { Swal } from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
-
+import spinner from './../../../Assets/Images/Spinner.svg'
 import QuestionSolveCart from './QuestionSolveCart';
 
 const QuestionDetailsSolve = () => {
@@ -128,11 +128,15 @@ const QuestionDetailsSolve = () => {
 
                             </QuestionSolveCart>
                         ))}
-                    </div> : <div><h5>Loading...</h5></div>}
+                    </div> :
+                        <div className=" justify-content-center w-100 d-flex">
+                            <img src={spinner} alt="" />
+
+                        </div>}
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

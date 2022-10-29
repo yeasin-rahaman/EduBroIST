@@ -91,8 +91,8 @@ const Dashboard = () => {
                             </li> */}
                             {/* </div>} */}
 
-                            <Link to={'/'}><li onClick={userLogOut} className='dashboard-logOut'>
-                                <FaSignOutAlt className='me-1' /> Log Out
+                            <Link to={'/'}><li onClick={userLogOut} className='dashboard-logOut btn'>
+                                <FaSignOutAlt className='me-1 ' /> Log Out
                             </li></Link>
                         </ul>
                     </div>

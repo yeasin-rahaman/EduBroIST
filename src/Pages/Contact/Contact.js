@@ -1,18 +1,36 @@
 import React from 'react';
 import './Contact.css';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import { NavLink } from 'react-router-dom';
+import contact from './../../Assets/Images/contactUS.gif'
+// import { useForm } from 'react-hook-form';
+// import { NavLink } from 'react-router-dom';
 const Contact = () => {
-    const { register, handleSubmit, } = useForm();
-    const onSubmit = data => {
-    };
+    // const { register, handleSubmit, } = useForm();
+    // const onSubmit = data => {
+    // };
     return (
         <Container>
-            <Row className='mt-5'>
-
+            <Row className='my-5 '>
                 <Col lg={6}>
-                    <div className="contact-left">
+                    <img src={contact} className="img-fluid my-5" alt="" />
+                    {/* <div className="contact-right">
+                        <h3>Get In Touch</h3>
+                        <p>Your email address will not be published. Required fields are marked *</p>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <label htmlFor="name" >Name   *</label>
+                            <input required id='name' className="rounde"{...register("name", { required: true })} />
+                            <label htmlFor="email">Username or email  *</label>
+                            <input required id='email' {...register("email", { required: true })} />
+                            <label htmlFor="sub">Subject  *</label>
+                            <input required id='sub' {...register("sub", { required: true })} />
+                            <label htmlFor="mess">Message  *</label>
+                            <input required id='mess'  {...register("mess")} />
+                            <input className='submit-btn btn btn-danger' type="submit" value="Send Message" />
+                        </form>
+                    </div> */}
+                </Col>
+                <Col lg={6}>
+                    <div className="contact-left my-5">
                         <h3>Contact Us</h3>
                         <p>If you are looking for a Question-oriented approach, you can use this one from Edu-Bro's Contact Us page.</p>
                         <div className="single-contact">
@@ -36,23 +54,7 @@ const Contact = () => {
                         </div> */}
                     </div>
                 </Col>
-                <Col lg={6}>
-                    <div className="contact-right">
-                        <h3>Get In Touch</h3>
-                        <p>Your email address will not be published. Required fields are marked *</p>
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <label htmlFor="name" >Name   *</label>
-                            <input required id='name' className="rounde"{...register("name", { required: true })} />
-                            <label htmlFor="email">Username or email  *</label>
-                            <input required id='email' {...register("email", { required: true })} />
-                            <label htmlFor="sub">Subject  *</label>
-                            <input required id='sub' {...register("sub", { required: true })} />
-                            <label htmlFor="mess">Message  *</label>
-                            <input required id='mess'  {...register("mess")} />
-                            <input className='submit-btn btn btn-danger' type="submit" value="Send Message" />
-                        </form>
-                    </div>
-                </Col>
+
             </Row>
         </Container>
 

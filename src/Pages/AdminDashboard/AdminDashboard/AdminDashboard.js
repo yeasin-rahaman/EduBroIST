@@ -1,12 +1,13 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { FaThLarge, FaUser, FaBookmark, FaCommentDots, FaSignOutAlt, FaTasks, FaUserShield } from 'react-icons/fa'
 import useFirebase from '../../../hooks/useFirebase';
 
 
 const AdminDashboard = () => {
-    const { admin } = useFirebase()
+    const { admin, userLogOut } = useFirebase()
+
     console.log(admin)
     return (
         <div className='dashboard'>
@@ -68,9 +69,9 @@ const AdminDashboard = () => {
                                 })}><FaUser className='me-1' /> Make Admin</NavLink>
                             </li>
 
-                            <li className='dashboard-logOut'>
+                            <Link to={'/'}><li onClick={userLogOut} className='dashboard-logOut btn '>
                                 <FaSignOutAlt className='me-1' /> Log Out
-                            </li>
+                            </li></Link>
                         </ul>
                     </div>
                 </Col>

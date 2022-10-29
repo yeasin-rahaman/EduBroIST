@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import AssignmentCart from './AssignmentCart';
+import spinner from './../../../Assets/Images/Spinner.svg'
 
 const AllAssignments = () => {
     const [assignments, setAssignments] = useState([]);
@@ -12,7 +13,7 @@ const AllAssignments = () => {
     const [pageCount, setPageCount] = useState(0)
     const size = 10;
 
-    console.log(assignments)
+
 
     const handlePageChange = (data) => {
         setPage(data.selected);
@@ -134,9 +135,9 @@ const AllAssignments = () => {
                 </div>
                 <div className="col-12 col-md-10">
                     {
-                        assignments.length === 0 ? <div className='text-center'><div class="spinner-border m-5" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div></div> :
+                        assignments.length === 0 ? <div className=" justify-content-center w-100 d-flex">
+                            <img src={spinner} alt="" />
+                        </div> :
                             <div className="row">
                                 {assignments?.map((assignment) => (
                                     <AssignmentCart

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 import AssignmentSolveCart from './AssignmentSolveCart';
 import file from './../../../Assets/Images/file.png'
+import spinner from './../../../Assets/Images/Spinner.svg'
 import { Swal } from 'sweetalert2/dist/sweetalert2';
 
 const AssignmentSolve = () => {
@@ -139,7 +140,9 @@ const AssignmentSolve = () => {
 
                             </AssignmentSolveCart>
                         ))}
-                    </div> : <div><h5>Loading...</h5></div>}
+                    </div> : <div>                       <div className=" justify-content-center w-100 d-flex">
+                        <img src={spinner} alt="" />
+                    </div></div>}
 
                 </div>
             </div>
