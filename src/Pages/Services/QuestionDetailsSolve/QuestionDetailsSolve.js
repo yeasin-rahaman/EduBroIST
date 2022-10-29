@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 import QuestionSolveCart from './QuestionSolveCart';
@@ -39,9 +40,14 @@ const QuestionDetailsSolve = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result)
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'Success',
+                    title: 'Question Solve Added Successfully',
+                    showConfirmButton: false,
+                    timer: 4000
+                })
 
-                alert('order confirmed')
                 reset()
             });
 
@@ -81,9 +87,9 @@ const QuestionDetailsSolve = () => {
                             <iframe title="question" src={viewUrl}
                                 className="img-fluid rounded-start w-100 " style={{ height: "300px" }} allow="autoplay"></iframe>
                             <div className="card-body">
-                                <h4 className="card-title mb-3">Question Title will be here</h4>
+                                <h4 className="card-title mb-3">{question?.subject}</h4>
                                 <div className='d-flex justify-content-between'>
-                                    <h5 className="card-title">Subject: {question?.subject}</h5>
+                                    <h5 className="card-title">Author : {question?.userName}</h5>
                                     <h5 className="card-title">Department: {question?.department}</h5>
                                 </div>
                                 <div className='d-flex justify-content-between'>

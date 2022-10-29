@@ -146,7 +146,7 @@ const useFirebase = () => {
       .then(data => {
         setAdmin(data?.role)
       })
-  }, [user.email])
+  }, [user.email, admin])
 
 
 

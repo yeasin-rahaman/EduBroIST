@@ -3,16 +3,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import './Footer.css';
 import { FaArrowRight, FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin, FaPinterest } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 
 const Footer = () => {
     const [email, setEmail] = useState("")
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if (email) {
-            alert("Thanks for Subscribing our newsletter")
-        }
-    }
     return (
         <footer className='footer-area pt-5 pb-3 mt-5'>
             <div className="footer-top">

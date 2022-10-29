@@ -3,17 +3,18 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
 import AssignmentSolveCart from './AssignmentSolveCart';
-
+import file from './../../../Assets/Images/file.png'
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 
 const AssignmentSolve = () => {
     const { user } = useFirebase()
     const { id } = useParams()
-    const [question, setQuestion] = useState({})
+    const [assignment, setAssignment] = useState({})
     const { register, handleSubmit, reset } = useForm();
-    const [QuestionSolves, setQuestionSolves] = useState([])
-    console.log('solve', QuestionSolves)
+    const [AssignmentSolves, setAssignmentSolves] = useState([])
+    console.log('assignment solve ', AssignmentSolves);
 
-    let googleId = question?.driveLink?.slice(32, 65);
+    let googleId = assignment?.driveLink?.slice(32, 65);
 
     const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
@@ -22,39 +23,45 @@ const AssignmentSolve = () => {
 
 
     const onSubmit = data => {
-        data.questionId = id
+        data.assignmentId = id
         data.userName = user.displayName
         data.email = user.email
-        data.subject = question.subject
-        data.year = question.year
-        data.code = question.code
-        data.department = question.department
+        data.subject = assignment.subject
+        data.year = assignment.year
+        data.code = assignment.code
+        data.department = assignment.department
 
         // post solve 
 
-        fetch(`https://edubro.herokuapp.com/addQuestionSolve`, {
+        fetch(`https://edubro.herokuapp.com/addAssignmentSolve`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result)
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'Success',
+                    title: 'Assignment Submitted Successfully',
+                    showConfirmButton: false,
+                    timer: 4000
+                })
 
-                alert('order confirmed')
+
                 reset()
             });
 
     };
 
 
-    // get question 
+    // get assignment 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/question/${id}`)
+        fetch(`https://edubro.herokuapp.com/assignment/${id}`)
             .then(res => res.json())
             .then(data => {
-                setQuestion(data)
+                setAssignment(data)
 
             })
     }, [id, reset])
@@ -63,12 +70,12 @@ const AssignmentSolve = () => {
 
     // get solve 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/questionSolve/${id}`)
+        fetch(`https://edubro.herokuapp.com/assignmentSolve/${id}`)
             .then((res) => res.json())
             .then((data) => {
-                setQuestionSolves(data)
+                setAssignmentSolves(data)
             });
-    }, [id, reset]);
+    }, [id, reset,]);
 
 
 
@@ -77,30 +84,40 @@ const AssignmentSolve = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="card custom-cart h-100 hover">
-                            <iframe title="question" src={viewUrl}
-                                className="img-fluid rounded-start w-100 " style={{ height: "300px" }} allow="autoplay"></iframe>
+                        <div className="card custom-cart h-100 hover d-flex justify-content-center ">
+                            {
+                                viewUrl ?
+
+                                    <img src={file} className="img-fluid w-50 " alt="" />
+                                    :
+                                    <iframe title="assignment" src={viewUrl}
+                                        className="img-fluid rounded-start w-100 " style={{ height: "220px" }} allow="autoplay">
+
+                                    </iframe>
+
+                            }
                             <div className="card-body">
-                                <h4 className="card-title mb-3">Assignment Title will be here</h4>
+                                <h4 className="card-title mb-3">{assignment?.subject}</h4>
                                 <div className='d-flex justify-content-between'>
-                                    <h5 className="card-title">Subject: {question?.subject}</h5>
-                                    <h5 className="card-title">Department: {question?.department}</h5>
+                                    <h5 className="card-title">Subject: </h5>
+                                    <h5 className="card-title">Department: {assignment?.department}</h5>
                                 </div>
                                 <div className='d-flex justify-content-between'>
-                                    <h5 className="card-title">Subject Code: {question?.code}</h5>
-                                    <h5 className="card-text ">Year: {question?.year}</h5>
+                                    <h5 className="card-title">Subject Code: {assignment?.code}</h5>
+                                    <h5 className="card-text ">Year: {assignment?.year}</h5>
                                 </div>
-                                <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
+                                <button className="btn-style download-btn d-flex mx-auto" ><a href={download} className="">Download</a></button>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <h2 className='text-capitalize mb-4'>Give your answer here</h2>
+                        <h2 className='text-capitalize mb-4'>Submit your Assignment here</h2>
                         <div className="login-form text-center">
                             <form onSubmit={handleSubmit(onSubmit)}>
 
-                                <input className='w-75 mb-3'  {...register("solveNumber", { required: true })} placeholder='Solve Number' /> <br />
-                                <input className='w-75 mb-3' {...register("solveDriveLink", { required: true })} placeholder='Question Link' /> <br />
+                                <input className='w-75 mb-3'  {...register("name", { required: true })} placeholder='Your Name' /> <br />
+                                <input className='w-75 mb-3'  {...register("role", { required: true })} placeholder='Your Role' /> <br />
+                                <input className='w-75 mb-3' {...register("solveDriveLink", { required: true })} placeholder='assignment Link' /> <br />
                                 <button type='submit'>Post Answer</button>
                             </form>
 
@@ -114,11 +131,11 @@ const AssignmentSolve = () => {
                 </div>
                 <div className="container text-black mt-5 mb-5" >
 
-                    {QuestionSolves.length ? <div className="row row-cols-1 row-cols-md-3 g-4">
-                        {QuestionSolves?.map((QuestionSolve) => (
+                    {AssignmentSolves.length ? <div className="row row-cols-1 row-cols-md-3 g-4">
+                        {AssignmentSolves?.map((AssignmentSolve) => (
                             <AssignmentSolveCart
-                                key={QuestionSolve.id}
-                                data={QuestionSolve}>
+                                key={AssignmentSolve.id}
+                                data={AssignmentSolve}>
 
                             </AssignmentSolveCart>
                         ))}

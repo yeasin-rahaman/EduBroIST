@@ -23,6 +23,11 @@ const AdminDashboard = () => {
                                 })}><FaThLarge className='me-1' /> Dashboard</NavLink>
                             </li>
                             <li>
+                                <NavLink to={`my-assignments`} style={({ isActive }) => ({
+                                    color: isActive ? "#da942c" : "black",
+                                })}><FaBookmark className='me-1' /> My Assignments</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to={`admin-questions`} style={({ isActive }) => ({
                                     color: isActive ? "#da942c" : "black",
                                 })}><FaBookmark className='me-1' /> Manage Questions</NavLink>

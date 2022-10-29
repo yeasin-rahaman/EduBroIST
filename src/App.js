@@ -89,6 +89,10 @@ function App() {
               <Route path='/admin-dashboard/admin-syllabus' element={<AdminRoute><AdminSyllabus /></AdminRoute>} />
               <Route path='/admin-dashboard/manage-questions' element={<AdminRoute><ManageQuestion /></AdminRoute>} />
               <Route path='/admin-dashboard/make-admin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
+              <Route path='/admin-dashboard/add-assignment' element={<AddAssignmentDashboard />} />
+              <Route path='/admin-dashboard/my-assignments' element={<MyAssignment />} />
+
+
             </Route>
 
             {/* User Dashboard  */}
@@ -97,7 +101,6 @@ function App() {
               <Route path='/dashboard' element={<DashboardWelcome />} />
               <Route path='/dashboard/welcome' element={<DashboardWelcome />} />
               <Route path='/dashboard/my-questions' element={<MyQuestions />} />
-              <Route path='/dashboard/my-assignments' element={<MyAssignment />} />
               <Route path='/dashboard/my-books' element={<MyBooks />} />
               <Route path='/dashboard/my-syllabus' element={<MySyllabus />} />
               <Route path='/dashboard/user-review' element={<CustomerReview />} />
@@ -107,10 +110,8 @@ function App() {
 
 
 
-
-
               <Route path='/dashboard/add-question' element={<AddQuestionDashboard />} />
-              <Route path='/dashboard/add-assignment' element={<AddAssignmentDashboard />} />
+
               <Route path='/dashboard/add-books' element={<AddBooksDashboard />} />
               <Route path='/dashboard/add-syllabus' element={<AddSyllabusDashboard />} />
               <Route path='/dashboard/add-labs' element={<AddLabsDashboard />} />

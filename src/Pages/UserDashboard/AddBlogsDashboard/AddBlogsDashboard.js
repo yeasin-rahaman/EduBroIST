@@ -11,13 +11,13 @@ const AddBlogsDashboard = () => {
     const { user } = useFirebase()
 
     const { register, handleSubmit, reset } = useForm();
-
+    const today = new Date().toISOString().slice(0, 10);
     const onSubmit = data => {
 
 
         if (!previewSource) return;
 
-
+        data.date = today
 
         data.blogImg = previewSource
         data.userName = user.displayName

@@ -1,12 +1,12 @@
 import React from 'react';
 
 const AssignmentSolveCart = ({ data }) => {
-    const { subject, year, code, driveLink, email, topic, userName, solveNumber, department } = data
+    const { subject, year, code, solveDriveLink, email, userName, department, name, role } = data
 
 
-    let googleId = driveLink?.slice(32, 65);
+    let googleId = solveDriveLink?.slice(32, 65);
 
-    console.log(driveLink)
+    console.log(solveDriveLink)
 
     const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
@@ -24,9 +24,11 @@ const AssignmentSolveCart = ({ data }) => {
                         <h5 className="card-text ">Year: {year}</h5>
                     </div>
                     <div className=''>
-                        <h5 className="card-title">Provider Name: {userName}</h5>
-                        <h5 className="card-text ">Email: {email}</h5>
+                        <h5 className="card-title">Student Name:  {name}
+                        </h5>
+                        <h5 className="card-text ">Roll: {role}</h5>
                     </div>
+
                     <div className="d-flex justify-content-between mt-3" >
                         <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
 

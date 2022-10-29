@@ -46,7 +46,7 @@ const MyAssignment = () => {
         <div className='my-questions'>
             <div className='d-flex justify-content-between align-items-center my-question-header'>
                 <h2>My Assignment</h2>
-                <Link to={'/dashboard/add-assignment'}>
+                <Link to={'/admin-dashboard/add-assignment'}>
                     <button className='btn-style'>Post Your Assignment</button>
                 </Link>
             </div>
@@ -64,6 +64,7 @@ const MyAssignment = () => {
 
                         <th >Status</th>
                         <th >Request To Delete</th>
+                        <th >View Assignment Details</th>
 
                     </tr>
                 </thead>
@@ -80,12 +81,25 @@ const MyAssignment = () => {
                                 className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
                             </td> */}
                             <td>{question.status}</td>
-                            <td> <button
-                                className="btn-style download-btn"
-                                onClick={() => handleQuestionDeleteRequest(question._id)}
-                            >
-                                Delete question
-                            </button></td>
+                            <td>
+                                <button
+                                    className="btn-style download-btn"
+                                    onClick={() => handleQuestionDeleteRequest(question._id)}
+                                >
+                                    Delete question
+                                </button>
+                            </td>
+                            <td>
+                                <button
+                                    className="btn-style download-btn"
+
+                                >
+
+                                    <Link to={`/assignment-details/${question._id}`}>View Submission</Link>
+                                </button>
+
+
+                            </td>
                         </tr>
                     </tbody>
 

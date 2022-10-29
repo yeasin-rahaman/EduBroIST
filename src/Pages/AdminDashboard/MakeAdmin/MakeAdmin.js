@@ -24,7 +24,14 @@ const MakeAdmin = () => {
                         timer: 4000
                     })
                 } else {
-                    alert('Oops! Not working')
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Oops! Not working',
+                        showConfirmButton: false,
+                        timer: 4000
+                    })
+
                 }
             })
 

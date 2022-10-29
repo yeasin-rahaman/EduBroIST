@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 
 import { Carousel } from 'react-bootstrap';
 import Rating from 'react-rating';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 
 const BooksDetails = () => {
 
@@ -62,9 +63,15 @@ const BooksDetails = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result)
 
-                alert('order confirmed')
+
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'Success',
+                    title: 'Review Added Successfully',
+                    showConfirmButton: false,
+                    timer: 4000
+                })
             });
 
     };

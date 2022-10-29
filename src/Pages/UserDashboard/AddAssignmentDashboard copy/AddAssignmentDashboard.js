@@ -11,7 +11,7 @@ const AddAssignmentDashboard = () => {
     const onSubmit = data => {
         data.userName = user.displayName
         data.email = user.email
-        data.status = 'Pending'
+        data.status = 'approved'
         data.date = today
 
         fetch(`https://edubro.herokuapp.com/postAssignment`, {

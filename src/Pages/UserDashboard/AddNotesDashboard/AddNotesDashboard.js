@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 const AddNotesDashboard = () => {
@@ -20,7 +21,14 @@ const AddNotesDashboard = () => {
             .then((result) => {
                 console.log(result)
 
-                alert('Question Added Successfully')
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'Success',
+                    title: 'Question Added Successfully',
+                    showConfirmButton: false,
+                    timer: 4000
+                })
+
                 reset()
             });
     };

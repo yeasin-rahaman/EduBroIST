@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc'
 import useAuth from '../../hooks/useAuth';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 
 const Register = () => {
 
@@ -22,7 +23,15 @@ const Register = () => {
     const onSubmit = data => {
         // console.log(data)
         if (data.password !== data.password2) {
-            alert('Your Password did not match')
+
+            Swal.fire({
+                position: 'top-center',
+                icon: 'Reject',
+                title: 'Your Password did not match',
+                showConfirmButton: false,
+                timer: 4000
+            })
+
             return;
         }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 
 const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -15,9 +16,24 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    alert('Make Admin successfully')
+
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'Success',
+                        title: 'Make Admin successfully',
+                        showConfirmButton: false,
+                        timer: 4000
+                    })
+
                 } else {
-                    alert('Oops! Not working')
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'Reject',
+                        title: 'Oops! Not working',
+                        showConfirmButton: false,
+                        timer: 4000
+                    })
+
                 }
             })
 

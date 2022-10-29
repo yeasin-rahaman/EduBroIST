@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 const AdminSyllabus = () => {
@@ -26,7 +27,14 @@ const AdminSyllabus = () => {
         })
             .then((res) => res.json())
             .then((result) => console.log(result));
-        alert('update')
+        Swal.fire({
+            position: 'top-center',
+            icon: 'Success',
+            title: 'Syllabus Status Update',
+            showConfirmButton: false,
+            timer: 4000
+        })
+
     }
 
     const handleSelectValue = (e) => {
