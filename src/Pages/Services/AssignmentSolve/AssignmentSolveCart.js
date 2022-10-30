@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AssignmentSolveCart = ({ data }) => {
-    const { subject, year, code, solveDriveLink, department, name, role } = data
+    const { subject, year, code, solveDriveLink, department, name, role, assignmentHeader } = data
 
 
     let googleId = solveDriveLink?.slice(32, 65);
@@ -17,6 +17,7 @@ const AssignmentSolveCart = ({ data }) => {
                 <iframe title="question" src={viewUrl}
                     className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
                 <div className="card-body">
+                    <h3 className="card-title mb-3">Subject {assignmentHeader}</h3>
                     <h4 className="card-title mb-3">Subject {subject}</h4>
                     <h5 className="card-title">Department: {department}</h5>
                     <div className='d-flex justify-content-between'>

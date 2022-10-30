@@ -86,27 +86,39 @@ const AssignmentSolve = () => {
                 <div className="row">
                     <div className="col-md-6">
                         <div className="card custom-cart h-100 hover d-flex justify-content-center ">
-                            {
-                                viewUrl ?
+                            <div className="blog-image d-flex justify-content-center">
+                                {
+                                    viewUrl ?
 
-                                    <img src={file} className="img-fluid w-50 " alt="" />
-                                    :
-                                    <iframe title="assignment" src={viewUrl}
-                                        className="img-fluid rounded-start w-100 " style={{ height: "220px" }} allow="autoplay">
+                                        <iframe title="question" src={viewUrl}
+                                            className="img-fluid rounded-start w-100 " style={{ height: "220px" }} allow="autoplay">
 
-                                    </iframe>
+                                        </iframe>
+                                        :
+                                        <img src={file} className="img-fluid w-50 " alt="" />
 
-                            }
+                                }
+                            </div>
                             <div className="card-body">
-                                <h4 className="card-title mb-3">{assignment?.subject}</h4>
-                                <div className='d-flex justify-content-between'>
-                                    <h5 className="card-title">Subject: </h5>
-                                    <h5 className="card-title">Department: {assignment?.department}</h5>
+
+                                <div className="blog-text px-2 py-3">
+                                    <h3>{assignment?.assignmentHeader}</h3>
+                                    <br />
+                                    <div className="blog-meta mb-1 d-flex justify-content-between">
+                                        <h4>{assignment?.subject}</h4>
+                                        <span>{assignment?.date}</span>
+                                    </div>
+                                    <div className='py-2 d-flex justify-content-between'>
+                                        <span>Semester: {assignment?.semester}</span>
+
+                                        <h4><span className='department'>{assignment?.department}</span></h4>
+                                        <span>Subject Code: {assignment?.code}</span>
+                                        {/* <span>Rating: <FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span> */}
+                                    </div>
+                                    {/* <h4>{subject}</h4> */}
+                                    <p>{assignment?.assignmentDetails}</p>
                                 </div>
-                                <div className='d-flex justify-content-between'>
-                                    <h5 className="card-title">Subject Code: {assignment?.code}</h5>
-                                    <h5 className="card-text ">Year: {assignment?.year}</h5>
-                                </div>
+
                                 <button className="btn-style download-btn d-flex mx-auto" ><a href={download} className="">Download</a></button>
                             </div>
                         </div>

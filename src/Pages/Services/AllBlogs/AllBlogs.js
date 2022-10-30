@@ -10,7 +10,7 @@ const AllBlogs = () => {
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
-    console.log(blogs)
+
 
 
 

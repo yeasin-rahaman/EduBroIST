@@ -4,7 +4,7 @@ import file from './../../../Assets/Images/file.png'
 
 const AssignmentCart = ({ data }) => {
     console.log(data);
-    const { driveLink, semester, code, subject, department, _id, date, assignmentDetails } = data
+    const { driveLink, semester, code, subject, department, _id, date, assignmentDetails, assignmentHeader } = data
 
 
     let googleId = driveLink?.slice(32, 65);
@@ -22,24 +22,30 @@ const AssignmentCart = ({ data }) => {
                             {
                                 viewUrl ?
 
-                                    <img src={file} className="img-fluid w-50 " alt="" />
-                                    :
+
+
                                     <iframe title="question" src={viewUrl}
                                         className="img-fluid rounded-start w-100 " style={{ height: "220px" }} allow="autoplay">
 
                                     </iframe>
+                                    :
+                                    <img src={file} className="img-fluid w-50 " alt="" />
 
                             }
                         </div>
                         <div className="blog-text px-2 py-3">
+                            <h3>{assignmentHeader}</h3>
+                            <br />
                             <div className="blog-meta mb-1 d-flex justify-content-between">
-                                <h3>{subject}</h3>
+
+
+                                <h5>{subject}</h5>
                                 <span>{date}</span>
                             </div>
                             <div className='py-2 d-flex justify-content-between'>
                                 <span>Semester: {semester}</span>
 
-                                <h4><span>{department}</span></h4>
+                                <h4><span className='department'>{department}</span></h4>
                                 <span>Subject Code: {code}</span>
                                 {/* <span>Rating: <FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span> */}
                             </div>

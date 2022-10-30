@@ -150,7 +150,7 @@ const AllAssignments = () => {
                 </div>
 
                 <div className="d-flex mt-5">
-                    <div className='mx-auto'>
+                    <div className='mx-auto pagination'>
 
                         <ReactPaginate
                             previousLabel={'previous'}
