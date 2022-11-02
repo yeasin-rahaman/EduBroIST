@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 
@@ -14,7 +14,7 @@ const AdminBooks = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/allBooks`)
+        fetch(`https://edubro.herokuapp.com/getAllBooks`)
             .then((res) => res.json())
             .then((data) => setBooks(data));
     }, [user?.email]);
@@ -33,8 +33,8 @@ const AdminBooks = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'update',
-            showConfirmButton: false,
+            title: 'Books Status Update',
+            showConfirmButton: true,
             timer: 4000
         })
     }
@@ -48,7 +48,7 @@ const AdminBooks = () => {
     return (
         < div className="container all-book-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Books <span style={{ color: "#da942c" }}>{books.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Books <span style={{ color: "#da942c" }}>{books?.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>

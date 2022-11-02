@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 const AdminNotes = () => {
@@ -14,7 +14,7 @@ const AdminNotes = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/allNotes`)
+        fetch(`https://edubro.herokuapp.com/getAllNotes`)
             .then((res) => res.json())
             .then((data) => setNotes(data));
     }, [user?.email]);
@@ -32,8 +32,8 @@ const AdminNotes = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'update',
-            showConfirmButton: false,
+            title: 'Notes Status Update',
+            showConfirmButton: true,
             timer: 4000
         })
     }
@@ -48,7 +48,7 @@ const AdminNotes = () => {
     return (
         < div className="container all-note-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Notes <span style={{ color: "#da942c" }}>{notes.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Notes <span style={{ color: "#da942c" }}>{notes?.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>

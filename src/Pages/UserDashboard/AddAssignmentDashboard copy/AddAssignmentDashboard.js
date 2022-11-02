@@ -47,7 +47,7 @@ const AddAssignmentDashboard = () => {
                                     <option value="ece">ECE</option>
                                     <option value="cse">CSE</option>
                                     <option value="bba">BBA</option>
-                                    <option value="diploma">diploma</option>
+                                    <option value="diploma">Diploma</option>
                                 </select>
 
                                 <select {...register("semester")}>

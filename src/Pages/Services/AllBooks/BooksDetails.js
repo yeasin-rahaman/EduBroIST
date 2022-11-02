@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 
 import { Carousel } from 'react-bootstrap';
 import Rating from 'react-rating';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const BooksDetails = () => {
 

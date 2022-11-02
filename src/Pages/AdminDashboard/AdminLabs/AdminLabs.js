@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
-import useFirebase from '../../../hooks/useFirebase';
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 
-const AdminLabs = () => {
+const AdminLab = () => {
+
 
     const [labs, setLabs] = useState([])
-    const { user } = useFirebase()
     console.log(labs)
 
     const [status, setStatus] = useState('')
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/allLabs`)
+        fetch(`https://edubro.herokuapp.com/getAllLabs`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
-    }, [user?.email]);
-
+    }, []);
+    console.log(labs);
 
 
     const handleUpdate = (id) => {
@@ -31,10 +30,11 @@ const AdminLabs = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'update',
-            showConfirmButton: false,
+            title: 'Lab Status Update',
+            showConfirmButton: true,
             timer: 4000
         })
+
     }
 
     const handleSelectValue = (e) => {
@@ -43,33 +43,32 @@ const AdminLabs = () => {
     }
 
     return (
-        < div className="container all-note-container" >
+        < div className="container all-lab-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-5 text-center pt-5">Total Notes <span className="text-danger">{labs.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total labs <span style={{ color: "#da942c" }}>{labs?.length}</span>  </h1>
             </div>
 
-            <table className="table table-dark" style={{ width: "100%" }}>
+            <table className="table table-gray" style={{ width: "100%" }}>
                 <thead  >
                     <tr className="bg-dark text-white mb-3 p-2" style={{ lab: "1px solid red" }}>
+
                         <th >Number</th>
-                        <th >Note Name</th>
-                        <th >Uploader Email</th>
+                        <th >Subject</th>
+                        <th >Uploader</th>
 
-                        {/* <th >note Preview</th> */}
-
+                        {/* <th >lab Preview</th> */}
                         <th >Status</th>
                         <th >Update</th>
                     </tr>
                 </thead>
                 {labs?.map((lab, index) => (
                     <tbody key={lab._id}>
-                        <tr role="row" style={{ note: "2px solid gray" }} >
+                        <tr role="row" style={{ lab: "2px solid gray" }} >
                             <th scope="row">{index + 1}</th>
-                            <td>{lab?.labName}</td>
-
-                            <td>{lab?.email}</td>
+                            <td>{lab.subject}</td>
+                            <td>{lab.email}</td>
                             {/* 
-                    <td> <iframe title="question" src={download}
+                    <td> <iframe title="lab" src={download}
         className="img-fluid rounded-start w-100 " style={{ height: "50px" }} allow="autoplay"></iframe>
         </td> */}
 
@@ -84,7 +83,7 @@ const AdminLabs = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => handleUpdate(lab._id)}>update</button>
+                                <button className="btn-style" onClick={() => handleUpdate(lab._id)}>update</button>
                             </td>
                         </tr>
                     </tbody>
@@ -95,4 +94,4 @@ const AdminLabs = () => {
     );
 };
 
-export default AdminLabs;
+export default AdminLab;

@@ -1,6 +1,7 @@
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
+import logo from './../../Assets/Images/edu-bro.svg'
 
 
 import './Header.css'
@@ -16,7 +17,7 @@ const Header = () => {
         <div className='header-area'>
             <Navbar expand="lg">
                 <Container>
-                    <NavLink onClick={handleClick} to="/" className='logo'><span>Edu Bro.</span></NavLink>
+                    <NavLink onClick={handleClick} to="/" className='logo'><span><img src={logo} alt="" /></span></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav onClick={handleClick} className="ms-auto menu d-flex align-items-center">
@@ -29,7 +30,7 @@ const Header = () => {
                                 <NavDropdown.Item as={NavLink} to="/blogs" >Blogs</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/notes" >Notes</NavDropdown.Item>
                                 <NavDropdown.Item as={NavLink} to="/labs" >Labs</NavDropdown.Item>
-                                <NavDropdown.Item as={NavLink} to="/books" >All BOOKS</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/books" >Books</NavDropdown.Item>
                                 <NavDropdown.Divider />
                             </NavDropdown>
 

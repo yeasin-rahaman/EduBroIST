@@ -44,7 +44,7 @@ const AllAssignments = () => {
             })
     }, [department, semester, page, search]);
 
-    console.log(assignments);
+
 
     return (
         <div className="container text-black mt-5 mb-5" >

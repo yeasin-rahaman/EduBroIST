@@ -42,7 +42,7 @@ const UserProfile = () => {
                                 <p>{user.email}</p>
                             </div>
                             <div className="single-box">
-                                <h6>DepartMent</h6>
+                                <h6>Department</h6>
                                 <p className='text-capitalize'>{userInfo?.department ? userInfo?.department : "null"}</p>
                             </div>
                         </div>

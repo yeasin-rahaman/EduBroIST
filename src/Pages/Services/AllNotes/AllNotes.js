@@ -5,10 +5,10 @@ import AllNotesCart from './AllNotesCart';
 const AllNotes = () => {
     const [notes, setNotes] = useState([]);
     useEffect(() => {
-        fetch('https://edubro.herokuapp.com/allnotes')
+        fetch('https://edubro.herokuapp.com/allNotes')
             .then(res => res.json())
             .then(data => setNotes(data))
-    }, [])
+    }, [notes])
 
 
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
+
 
 
 const AdminQuestion = () => {
@@ -26,14 +27,17 @@ const AdminQuestion = () => {
             body: JSON.stringify({ status }),
         })
             .then((res) => res.json())
-            .then((result) => console.log(result));
-        Swal.fire({
-            position: 'top-center',
-            icon: 'Success',
-            title: 'Question Status Update',
-            showConfirmButton: false,
-            timer: 4000
-        })
+            .then((result) =>
+
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'Success',
+                    title: 'Assignment Status Update',
+                    showConfirmButton: true,
+                    timer: 4000
+                })
+            );
+
 
     }
 

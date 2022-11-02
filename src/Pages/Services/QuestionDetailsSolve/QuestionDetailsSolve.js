@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 import spinner from './../../../Assets/Images/Spinner.svg'
 import QuestionSolveCart from './QuestionSolveCart';
@@ -20,8 +20,6 @@ const QuestionDetailsSolve = () => {
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
 
 
-
-
     const onSubmit = data => {
         data.questionId = id
         data.userName = user.displayName
@@ -31,8 +29,6 @@ const QuestionDetailsSolve = () => {
         data.code = question.code
         data.department = question.department
 
-        // post solve 
-
         fetch(`https://edubro.herokuapp.com/addQuestionSolve`, {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -40,19 +36,15 @@ const QuestionDetailsSolve = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                Swal.fire({
-                    position: 'top-center',
-                    icon: 'Success',
-                    title: 'Question Solve Added Successfully',
-                    showConfirmButton: false,
-                    timer: 4000
-                })
-
+                console.log(result)
+                Swal.fire(
+                    'Question Posted Successfully.',
+                )
                 reset()
+
+
             });
-
     };
-
 
     // get question 
 
@@ -120,7 +112,7 @@ const QuestionDetailsSolve = () => {
                 </div>
                 <div className="container text-black mt-5 mb-5" >
 
-                    {QuestionSolves.length ? <div className="row row-cols-1 row-cols-md-3 g-4">
+                    {QuestionSolves?.length ? <div className="row row-cols-1 row-cols-md-3 g-4">
                         {QuestionSolves?.map((QuestionSolve) => (
                             <QuestionSolveCart
                                 key={QuestionSolve.id}

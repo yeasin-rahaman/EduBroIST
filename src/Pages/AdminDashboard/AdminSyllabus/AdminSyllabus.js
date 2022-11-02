@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 const AdminSyllabus = () => {
@@ -12,7 +12,7 @@ const AdminSyllabus = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/allSyllabus`)
+        fetch(`https://edubro.herokuapp.com/getAllSyllabus`)
             .then((res) => res.json())
             .then((data) => setSyllabus(data));
     }, [user?.email]);
@@ -31,7 +31,7 @@ const AdminSyllabus = () => {
             position: 'top-center',
             icon: 'Success',
             title: 'Syllabus Status Update',
-            showConfirmButton: false,
+            showConfirmButton: true,
             timer: 4000
         })
 
@@ -46,7 +46,7 @@ const AdminSyllabus = () => {
     return (
         < div className="container all-book-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Syllabus <span style={{ color: "#da942c" }}>{syllabus.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Syllabus <span style={{ color: "#da942c" }}>{syllabus?.length}</span>  </h1>
             </div>
 
             <table className="table table-gray" style={{ width: "100%" }}>

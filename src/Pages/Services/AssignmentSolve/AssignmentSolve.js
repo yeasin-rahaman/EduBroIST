@@ -5,7 +5,7 @@ import useFirebase from '../../../hooks/useFirebase';
 import AssignmentSolveCart from './AssignmentSolveCart';
 import file from './../../../Assets/Images/file.png'
 import spinner from './../../../Assets/Images/Spinner.svg'
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 const AssignmentSolve = () => {
     const { user } = useFirebase()

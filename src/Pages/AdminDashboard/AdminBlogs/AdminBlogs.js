@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 const AdminBlogs = () => {
@@ -12,7 +12,7 @@ const AdminBlogs = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/allBlogs`)
+        fetch(`https://edubro.herokuapp.com/getAllBlogs`)
             .then((res) => res.json())
             .then((data) => setBlogs(data));
     }, [user?.email]);
@@ -30,8 +30,8 @@ const AdminBlogs = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'update',
-            showConfirmButton: false,
+            title: 'Blog Status Update',
+            showConfirmButton: true,
             timer: 4000
         })
 
@@ -47,7 +47,7 @@ const AdminBlogs = () => {
     return (
         < div className="container all-blog-container" >
             <div className="text-center pb-3">
-                <h1 className="mb-2 text-center pt-2">Total Blogs <span style={{ color: "#da942c" }}>{blogs.length}</span>  </h1>
+                <h1 className="mb-2 text-center pt-2">Total Blogs <span style={{ color: "#da942c" }}>{blogs?.length}</span>  </h1>
             </div>
             <table className="table table-gray" style={{ width: "100%" }}>
                 <thead  >

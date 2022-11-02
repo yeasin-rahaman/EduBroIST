@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2';
 
 
 const AdminAssignment = () => {
@@ -31,8 +31,8 @@ const AdminAssignment = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'update',
-            showConfirmButton: false,
+            title: 'Assignment Status Update',
+            showConfirmButton: true,
             timer: 4000
         })
 

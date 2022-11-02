@@ -5,11 +5,10 @@
      position: relative;
 }
 
-.header-area .logo {
-     color: white;
-     font-size: 28px;
-     font-weight: 600;
+.logo img {
+     height: 2.5rem;
 }
+
 
 .header-area .menu {
      position: relative;

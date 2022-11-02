@@ -19,8 +19,8 @@ const ManageQuestion = () => {
                     <tr>
                         <td>1</td>
                         <td>CSE 3rd semister Object Oriented Programming problem</td>
-                        <td>approved</td>
-                        <td><button className='details-btn'>approve</button> <FaTrashAlt className='btn-delete' /></td>
+                        <td>Approved</td>
+                        <td><button className='details-btn'>Approve</button> <FaTrashAlt className='btn-delete' /></td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -31,14 +31,14 @@ const ManageQuestion = () => {
                     <tr>
                         <td>3</td>
                         <td >c++ problem solving question 2021 DU</td>
-                        <td>approved</td>
+                        <td>Approved</td>
                         <td><button className='details-btn'>approve</button><FaTrashAlt className='btn-delete' /></td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td >statistics bba question 2020 national university</td>
                         <td>pending</td>
-                        <td><button className='details-btn'>approve</button><FaTrashAlt className='btn-delete' /></td>
+                        <td><button className='details-btn'>Approve</button><FaTrashAlt className='btn-delete' /></td>
                     </tr>
                 </tbody>
             </Table>

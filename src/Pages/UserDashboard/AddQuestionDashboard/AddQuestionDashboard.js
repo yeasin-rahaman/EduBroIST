@@ -42,11 +42,11 @@ const AddQuestionDashboard = () => {
                                     <option value="ece">ECE</option>
                                     <option value="cse">CSE</option>
                                     <option value="bba">BBA</option>
-                                    <option value="diploma">diploma</option>
+                                    <option value="diploma">Diploma</option>
                                 </select>
 
                                 <select {...register("semester")}>
-                                    <option value="1">1st</option>
+                                    <option value="1">1st</option>s
                                     <option value="2">2nd</option>
                                     <option value="3">3rd</option>
                                     <option value="4">4th</option>
