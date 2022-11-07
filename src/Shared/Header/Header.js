@@ -10,7 +10,7 @@ import './Header.css'
 const Header = () => {
     const { userLogOut, user, toggle, setToggle, handleClick, admin } = useFirebase()
 
-    console.log(user.photoURL)
+
 
     return (
 

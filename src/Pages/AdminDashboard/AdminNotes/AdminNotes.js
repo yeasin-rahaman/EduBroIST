@@ -43,7 +43,7 @@ const AdminNotes = () => {
         setStatus(statusData)
     }
 
-
+    console.log(status)
 
     return (
         < div className="container all-note-container" >
@@ -77,7 +77,7 @@ const AdminNotes = () => {
 
                             <td>
                                 <div >
-                                    <select onChange={handleSelectValue} className="pending p-2 ">
+                                    <select onChange={handleSelectValue} className="pending p-2 capitalize">
                                         <option defaultValue={note.status}>{note.status}</option>
                                         <option defaultValue="approved">Approved</option>
                                         <option defaultValue="pending">Pending</option>
@@ -86,7 +86,7 @@ const AdminNotes = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn-style" onClick={() => handleUpdate(note._id)}>update</button>
+                                <button className="btn-style" onClick={() => handleUpdate(note._id)}>Update</button>
                             </td>
                         </tr>
                     </tbody>

@@ -21,7 +21,7 @@ const MakeAdmin = () => {
                         position: 'top-center',
                         icon: 'Success',
                         title: 'Make Admin successfully',
-                        showConfirmButton: false,
+                        showConfirmButton: true,
                         timer: 4000
                     })
 
@@ -30,7 +30,7 @@ const MakeAdmin = () => {
                         position: 'top-center',
                         icon: 'Reject',
                         title: 'Oops! Not working',
-                        showConfirmButton: false,
+                        showConfirmButton: true,
                         timer: 4000
                     })
 

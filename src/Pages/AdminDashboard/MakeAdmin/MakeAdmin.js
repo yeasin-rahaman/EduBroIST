@@ -20,7 +20,7 @@ const MakeAdmin = () => {
                         position: 'top-center',
                         icon: 'success',
                         title: 'Admin Added Successfully!',
-                        showConfirmButton: false,
+                        showConfirmButton: true,
                         timer: 4000
                     })
                 } else {
@@ -28,7 +28,7 @@ const MakeAdmin = () => {
                         position: 'top-center',
                         icon: 'success',
                         title: 'Oops! Not working',
-                        showConfirmButton: false,
+                        showConfirmButton: true,
                         timer: 4000
                     })
 

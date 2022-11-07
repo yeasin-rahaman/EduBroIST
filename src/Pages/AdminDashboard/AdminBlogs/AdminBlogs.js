@@ -76,7 +76,7 @@ const AdminBlogs = () => {
 
                             <td>
                                 <div >
-                                    <select onChange={handleSelectValue} className="pending p-2 ">
+                                    <select onChange={handleSelectValue} className="pending p-2 capitalize">
                                         <option defaultValue={blog.status}>{blog.status}</option>
                                         <option defaultValue="approved">Approved</option>
                                         <option defaultValue="pending">Pending</option>
@@ -85,7 +85,7 @@ const AdminBlogs = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn-style" onClick={() => handleUpdate(blog._id)}>update</button>
+                                <button className="btn-style" onClick={() => handleUpdate(blog._id)}>Update</button>
                             </td>
                         </tr>
                     </tbody>

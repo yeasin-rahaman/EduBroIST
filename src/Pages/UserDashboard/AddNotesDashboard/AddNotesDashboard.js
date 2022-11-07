@@ -25,7 +25,7 @@ const AddNotesDashboard = () => {
                     position: 'top-center',
                     icon: 'Success',
                     title: 'Question Added Successfully',
-                    showConfirmButton: false,
+                    showConfirmButton: true,
                     timer: 4000
                 })
 

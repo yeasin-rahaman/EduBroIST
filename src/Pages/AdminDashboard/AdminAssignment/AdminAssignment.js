@@ -75,7 +75,7 @@ const AdminAssignment = () => {
 
                             <td>
                                 <div >
-                                    <select onChange={handleSelectValue} className="pending p-2 ">
+                                    <select onChange={handleSelectValue} className="pending p-2 capitalize">
                                         <option defaultValue={assignment.status}>{assignment.status}</option>
                                         <option defaultValue="approved">Approved</option>
                                         <option defaultValue="pending">Pending</option>
@@ -84,7 +84,7 @@ const AdminAssignment = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn-style" onClick={() => handleUpdate(assignment._id)}>update</button>
+                                <button className="btn-style" onClick={() => handleUpdate(assignment._id)}>Update</button>
                             </td>
                         </tr>
                     </tbody>

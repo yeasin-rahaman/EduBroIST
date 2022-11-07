@@ -16,7 +16,7 @@ const SyllabusCart = ({ data }) => {
                 <iframe title="question" src={viewUrl}
                     className="img-fluid rounded-start w-100 " style={{ height: "330px" }} allow="autoplay"></iframe>
                 <div className="card-body mt-3">
-                    <h5 className="card-title fs-6"><b>Department:</b> {syllabusName}</h5>
+                    <h5 className="card-title fs-6 ">{syllabusName}</h5>
                     <h5 className="card-title"><b>Year</b> {year}</h5>
 
                     <div className='mt-3'>

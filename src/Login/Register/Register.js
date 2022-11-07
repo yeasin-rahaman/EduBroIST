@@ -28,7 +28,7 @@ const Register = () => {
                 position: 'top-center',
                 icon: 'Reject',
                 title: 'Your Password did not match',
-                showConfirmButton: false,
+                showConfirmButton: true,
                 timer: 4000
             })
 

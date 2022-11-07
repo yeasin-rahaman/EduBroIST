@@ -18,7 +18,6 @@
 .menu-item {
      color: white;
      font-weight: 600;
-     text-transform: uppercase;
      margin-left: 15px;
      transition: all .3s;
 }
@@ -29,7 +28,6 @@
 .menu-item {
      color: white !important;
      font-weight: 600 !important;
-     text-transform: uppercase;
      margin-left: 15px;
      transition: all .3s;
 }

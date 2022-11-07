@@ -13,6 +13,7 @@ const AssignmentSolve = () => {
     const [assignment, setAssignment] = useState({})
     const { register, handleSubmit, reset } = useForm();
     const [AssignmentSolves, setAssignmentSolves] = useState([])
+    const [counter, setCounter] = useState(false)
     console.log('assignment solve ', AssignmentSolves);
 
     let googleId = assignment?.driveLink?.slice(32, 65);
@@ -41,23 +42,21 @@ const AssignmentSolve = () => {
         })
             .then((res) => res.json())
             .then((result) => {
+                console.log(result);
                 Swal.fire({
                     position: 'top-center',
                     icon: 'Success',
                     title: 'Assignment Submitted Successfully',
-                    showConfirmButton: false,
                     timer: 4000
                 })
 
-
-                reset()
             });
-
+        reset()
+        setCounter(!counter)
     };
 
 
     // get assignment 
-
     useEffect(() => {
         fetch(`https://edubro.herokuapp.com/assignment/${id}`)
             .then(res => res.json())
@@ -65,7 +64,7 @@ const AssignmentSolve = () => {
                 setAssignment(data)
 
             })
-    }, [id, reset])
+    }, [id])
 
 
 
@@ -76,9 +75,43 @@ const AssignmentSolve = () => {
             .then((data) => {
                 setAssignmentSolves(data)
             });
-    }, [id, reset,]);
+    }, [id, counter]);
 
 
+    const handleSolveDeleteRequest = id => {
+        const proceed = Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your solve has been deleted.',
+                    'success'
+                )
+            }
+        })
+
+        if (proceed) {
+            const url = `https://edubro.herokuapp.com/deleteAssignmentSolve/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = AssignmentSolves?.filter(AssignmentSolve => AssignmentSolve._id !== id);
+                        setAssignmentSolves(remaining);
+                    }
+                })
+        }
+    }
 
     return (
         <div className='py-5'>
@@ -148,8 +181,8 @@ const AssignmentSolve = () => {
                         {AssignmentSolves?.map((AssignmentSolve) => (
                             <AssignmentSolveCart
                                 key={AssignmentSolve.id}
-                                data={AssignmentSolve}>
-
+                                data={AssignmentSolve}
+                                delete={handleSolveDeleteRequest}>
                             </AssignmentSolveCart>
                         ))}
                     </div> : <div>                       <div className=" justify-content-center w-100 d-flex">

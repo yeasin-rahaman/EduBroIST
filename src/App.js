@@ -20,7 +20,6 @@ import AdminWelcome from './Pages/AdminDashboard/AdminWelcome/AdminWelcome';
 import AdminQuestion from './Pages/AdminDashboard/AdminQuestion/AdminQuestion';
 import AdminBlogs from './Pages/AdminDashboard/AdminBlogs/AdminBlogs';
 import MakeAdmin from './Pages/AdminDashboard/MakeAdmin/MakeAdmin';
-import ManageQuestion from './Pages/AdminDashboard/ManageQuestions/ManageQuestion';
 import AdminSyllabus from './Pages/AdminDashboard/AdminSyllabus/AdminSyllabus';
 import AdminNotes from './Pages/AdminDashboard/AdminNotes/AdminNotes';
 import AdminBooks from './Pages/AdminDashboard/AdminBooks/AdminBooks';
@@ -87,7 +86,7 @@ function App() {
               <Route path='/admin-dashboard/admin-books' element={<AdminRoute><AdminBooks /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-lab' element={<AdminRoute><AdminLabs /></AdminRoute>} />
               <Route path='/admin-dashboard/admin-syllabus' element={<AdminRoute><AdminSyllabus /></AdminRoute>} />
-              <Route path='/admin-dashboard/manage-questions' element={<AdminRoute><ManageQuestion /></AdminRoute>} />
+
               <Route path='/admin-dashboard/make-admin' element={<AdminRoute><MakeAdmin /></AdminRoute>} />
               <Route path='/admin-dashboard/add-assignment' element={<AddAssignmentDashboard />} />
               <Route path='/admin-dashboard/my-assignments' element={<MyAssignment />} />

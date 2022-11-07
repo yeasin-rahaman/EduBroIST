@@ -12,7 +12,7 @@ const QuestionDetailsSolve = () => {
     const [question, setQuestion] = useState({})
     const { register, handleSubmit, reset } = useForm();
     const [QuestionSolves, setQuestionSolves] = useState([])
-    console.log('solve', QuestionSolves)
+    const [counter, setCounter] = useState(false)
 
     let googleId = question?.driveLink?.slice(32, 65);
 
@@ -38,11 +38,11 @@ const QuestionDetailsSolve = () => {
             .then((result) => {
                 console.log(result)
                 Swal.fire(
-                    'Question Posted Successfully.',
+                    'Answer Posted Successfully.',
                 )
                 reset()
 
-
+                setCounter(!counter)
             });
     };
 
@@ -66,7 +66,43 @@ const QuestionDetailsSolve = () => {
             .then((data) => {
                 setQuestionSolves(data)
             });
-    }, [id, reset]);
+    }, [id, counter]);
+
+    const handleSolveDeleteRequest = id => {
+        const proceed = Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your solve has been deleted.',
+                    'success'
+                )
+            }
+        })
+        if (proceed) {
+            const url = `https://edubro.herokuapp.com/deleteQuestionSolve/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        const remaining = QuestionSolves?.filter(questionSolve => questionSolve._id !== id);
+                        setQuestionSolves(remaining);
+                    }
+                })
+        }
+    }
+
+
 
 
 
@@ -82,7 +118,7 @@ const QuestionDetailsSolve = () => {
                                 <h4 className="card-title mb-3">{question?.subject}</h4>
                                 <div className='d-flex justify-content-between'>
                                     <h5 className="card-title">Author : {question?.userName}</h5>
-                                    <h5 className="card-title">Department: {question?.department}</h5>
+                                    <h5 className="card-title">Department: <span className='department'> {question?.department}</span></h5>
                                 </div>
                                 <div className='d-flex justify-content-between'>
                                     <h5 className="card-title">Subject Code: {question?.code}</h5>
@@ -109,6 +145,7 @@ const QuestionDetailsSolve = () => {
                     <div className="col-md-12">
                         <h3 className='text-center mt-5 fs-1 mb-4'>All the Answers are Below here</h3>
                     </div>
+
                 </div>
                 <div className="container text-black mt-5 mb-5" >
 
@@ -116,7 +153,8 @@ const QuestionDetailsSolve = () => {
                         {QuestionSolves?.map((QuestionSolve) => (
                             <QuestionSolveCart
                                 key={QuestionSolve.id}
-                                data={QuestionSolve}>
+                                data={QuestionSolve}
+                                delete={handleSolveDeleteRequest}>
 
                             </QuestionSolveCart>
                         ))}

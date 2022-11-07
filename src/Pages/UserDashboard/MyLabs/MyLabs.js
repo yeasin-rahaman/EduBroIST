@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 const MyLabs = () => {
@@ -18,7 +19,23 @@ const MyLabs = () => {
 
     const handleLabDeleteRequest = id => {
 
-        const proceed = window.confirm('Are you sure you want to Cancel this lab')
+        const proceed = Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your lab has been deleted.',
+                    'success'
+                )
+            }
+        })
         if (proceed) {
             const url = `https://edubro.herokuapp.com/deleteLab/${id}`;
             fetch(url, {

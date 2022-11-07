@@ -74,7 +74,7 @@ const AdminLab = () => {
 
                             <td>
                                 <div >
-                                    <select onChange={handleSelectValue} className="pending p-2 ">
+                                    <select onChange={handleSelectValue} className="pending p-2 capitalize">
                                         <option defaultValue={lab.status}>{lab.status}</option>
                                         <option defaultValue="approved">Approved</option>
                                         <option defaultValue="pending">Pending</option>
@@ -83,7 +83,7 @@ const AdminLab = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn-style" onClick={() => handleUpdate(lab._id)}>update</button>
+                                <button className="btn-style" onClick={() => handleUpdate(lab._id)}>Update</button>
                             </td>
                         </tr>
                     </tbody>

@@ -21,7 +21,7 @@ const AllNotesCart = ({ data }) => {
                     <div className="col-md-4">
                         <div className="card-body">
                             <h5 className="card-title fs-3">{topic}</h5>
-                            <h5 className="card-title"><b>Department:</b> {department}</h5>
+                            <h5 className="card-title "><b>Department:</b> <span className='department'> {department}</span></h5>
                             <h5 className="card-title"><b>Subject:</b> {subject}</h5>
                             <h5 className="card-title"><b>Edition:</b> {userName}</h5>
                             {/* <h5 className="card-text "><b>email:</b> {email}</h5> */}

@@ -37,7 +37,7 @@ const QuestionDetails = () => {
                                 <h4 className="card-title mb-3">Question Title will be here</h4>
                                 <div className='d-flex justify-content-between'>
                                     <h5 className="card-title">Subject: {question?.subject}</h5>
-                                    <h5 className="card-title">Department: {question?.department}</h5>
+                                    <h5 className="card-title">Department:<span className='department'> {question?.department}</span></h5>
                                 </div>
                                 <div className='d-flex justify-content-between'>
                                     <h5 className="card-title">Subject Code: {question?.code}</h5>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 
@@ -23,7 +24,23 @@ const MyBlogs = () => {
 
     const handleBlogDeleteRequest = id => {
 
-        const proceed = window.confirm('Are you sure you want to Cancel this blog')
+        const proceed = Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your blog has been deleted.',
+                    'success'
+                )
+            }
+        })
         if (proceed) {
             const url = `https://edubro.herokuapp.com/deleteBlog/${id}`;
             fetch(url, {

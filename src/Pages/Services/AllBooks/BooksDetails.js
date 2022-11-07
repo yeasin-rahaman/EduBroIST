@@ -69,7 +69,7 @@ const BooksDetails = () => {
                     position: 'top-center',
                     icon: 'Success',
                     title: 'Review Added Successfully',
-                    showConfirmButton: false,
+                    showConfirmButton: true,
                     timer: 4000
                 })
             });

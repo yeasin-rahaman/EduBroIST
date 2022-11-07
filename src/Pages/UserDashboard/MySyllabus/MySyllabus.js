@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import { Swal } from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
 const MySyllabus = () => {
@@ -18,7 +19,24 @@ const MySyllabus = () => {
 
     const handleSyllabusDeleteRequest = id => {
 
-        const proceed = window.confirm('Are you sure you want to Cancel this syllabus')
+        const proceed = Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your syllabus has been deleted.',
+                    'success'
+                )
+            }
+        })
+
         if (proceed) {
             const url = `https://edubro.herokuapp.com/deleteSyllabus/${id}`;
             fetch(url, {
