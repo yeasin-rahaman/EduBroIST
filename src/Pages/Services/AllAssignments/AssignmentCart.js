@@ -16,7 +16,7 @@ const AssignmentCart = ({ data }) => {
     return (
         <div className='py-5 '>
             <div className="container">
-                <div className="row justify-content-center custom-cart h-100 hover shadow rounded p-5">
+                <div className="row justify-content-center custom-cart h-100 hover shadow rounded py-5">
                     <div className="col-md-12 ">
                         <div className="blog-image d-flex justify-content-center">
                             {
@@ -40,12 +40,18 @@ const AssignmentCart = ({ data }) => {
 
 
                                 <h5>{subject}</h5>
+
+                            </div>
+                            <div className='py-2 d-flex justify-content-between'>
+
+                                <h4><span className='department'>{department}</span></h4>
+
                                 <span>{date}</span>
+                                {/* <span>Rating: <FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span> */}
                             </div>
                             <div className='py-2 d-flex justify-content-between'>
                                 <span>Semester: {semester}</span>
 
-                                <h4><span className='department'>{department}</span></h4>
                                 <span>Subject Code: {code}</span>
                                 {/* <span>Rating: <FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></span> */}
                             </div>
