@@ -62,6 +62,7 @@ const AdminQuestion = () => {
 
                         {/* <th >question Preview</th> */}
                         <th >Status</th>
+                        <th >View</th>
                         <th >Update</th>
                     </tr>
                 </thead>
@@ -85,6 +86,9 @@ const AdminQuestion = () => {
                                         <option defaultValue="cancelled">Cancelled</option>
                                     </select>
                                 </div>
+                            </td>
+                            <td>
+                                <button className="btn-style download-btn"  ><a href={question.driveLink} target="_blank" >View</a></button>
                             </td>
                             <td>
                                 <button className="btn-style" onClick={() => handleUpdate(question._id)}>Update</button>

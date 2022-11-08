@@ -42,8 +42,6 @@ const AdminBlogs = () => {
         setStatus(statusData)
     }
 
-
-
     return (
         < div className="container all-blog-container" >
             <div className="text-center pb-3">

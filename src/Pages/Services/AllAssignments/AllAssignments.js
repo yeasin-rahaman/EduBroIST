@@ -71,7 +71,23 @@ const AllAssignments = () => {
                             onChange={(e) => setDepartment(e.target.value)}
                         >
 
-                            <div className="form-check align-items-center">
+
+                            <input type="radio" id="html" name="fav_language" value="" />
+                            <label for="all" className='ps-2 form-check-label fw-bold'>All</label>
+                            <br />
+                            <input type="radio" id="cse" name="fav_language" value="cse" />
+                            <label fo r="cse" className='ps-2 form-check-label fw-bold'>CSE</label>
+                            <br />
+                            <input type="radio" id="ece" name="fav_language" value="ece" />
+                            <label for="css" className='ps-2 form-check-label fw-bold'>ECE</label>
+                            <br />
+                            <input type="radio" id="bba" name="fav_language" value="bba" />
+                            <label for="bba" className='ps-2 form-check-label fw-bold'>BBA</label>
+                            <br />
+                            <input type="radio" id="bba" name="fav_language" value="diploma" />
+                            <label for="bba" className='ps-2 form-check-label fw-bold'>DIPLOMA</label>
+
+                            {/* <div className="form-check align-items-center">
                                 <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
                                 <label className="form-check-label fw-bold" for="flexCheckDefault">
                                     All
@@ -94,7 +110,7 @@ const AllAssignments = () => {
                                 <label className="form-check-label fw-bold" for="flexCheckDefault">
                                     BBA
                                 </label>
-                            </div>
+                            </div> */}
                         </form>
                         {/* 
                         <div className='mt-3'>

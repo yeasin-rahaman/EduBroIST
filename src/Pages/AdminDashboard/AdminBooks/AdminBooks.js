@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Children } from 'react';
 import Swal from 'sweetalert2/dist/sweetalert2';
 import useFirebase from '../../../hooks/useFirebase';
 
@@ -43,7 +44,7 @@ const AdminBooks = () => {
         const statusData = (e.target.value).toLowerCase()
         setStatus(statusData)
     }
-
+    console.log("books", books);
 
     return (
         < div className="container all-book-container" >
@@ -61,6 +62,7 @@ const AdminBooks = () => {
                         {/* <th >Book Preview</th> */}
 
                         <th >Status</th>
+                        <th >View File</th>
                         <th >Update</th>
                     </tr>
                 </thead>
@@ -84,6 +86,9 @@ const AdminBooks = () => {
                                         <option defaultValue="cancelled">Cancelled</option>
                                     </select>
                                 </div>
+                            </td>
+                            <td>
+                                <button className="btn-style download-btn"  ><a href={book.driveLink} target="_blank" >View</a></button>
                             </td>
                             <td>
                                 <button className="btn-style" onClick={() => handleUpdate(book._id)}>Update</button>

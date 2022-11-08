@@ -59,6 +59,7 @@ const AdminAssignment = () => {
 
                         {/* <th >assignment Preview</th> */}
                         <th >Status</th>
+                        <th >View</th>
                         <th >Update</th>
                     </tr>
                 </thead>
@@ -82,6 +83,9 @@ const AdminAssignment = () => {
                                         <option defaultValue="cancelled">Cancelled</option>
                                     </select>
                                 </div>
+                            </td>
+                            <td>
+                                <button className="btn-style download-btn"  ><a href={assignment.driveLink} target="_blank" >View</a></button>
                             </td>
                             <td>
                                 <button className="btn-style" onClick={() => handleUpdate(assignment._id)}>Update</button>

@@ -11,7 +11,7 @@ const AssignmentCart = ({ data }) => {
 
 
 
-    // const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
+    const download = `https://drive.google.com/u/0/uc?id=${googleId}&export=download`
     const viewUrl = `https://drive.google.com/file/d/${googleId}/preview`
     return (
         <div className='py-5 '>
@@ -58,8 +58,13 @@ const AssignmentCart = ({ data }) => {
                             {/* <h4>{subject}</h4> */}
                             <p>{assignmentDetails}</p>
                         </div>
-                        <div className='buttons d-flex justify-content-center'>
-                            <Link to={`/assignment-details/${_id}`}><button className="btn-style" >View Submission</button></Link>
+                        {/* <div className='buttons d-flex justify-content-center'>
+                            <Link to={`/assignment-details/${_id}`}><button className="btn-style" ></button></Link>
+                        </div> */}
+
+                        <div className='buttons' >
+                            <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
+                            <Link to={`/question-details/${_id}`}><button className="btn-style" >View Submission</button></Link>
                         </div>
                     </div>
 

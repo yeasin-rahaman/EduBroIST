@@ -59,6 +59,7 @@ const AdminSyllabus = () => {
                         {/* <th >Book Preview</th> */}
 
                         <th >Status</th>
+                        <th >View</th>
                         <th >Update</th>
                     </tr>
                 </thead>
@@ -82,6 +83,9 @@ const AdminSyllabus = () => {
                                         <option defaultValue="cancelled">Cancelled</option>
                                     </select>
                                 </div>
+                            </td>
+                            <td>
+                                <button className="btn-style download-btn"  ><a href={syllabuss.driveLink} target="_blank" >View</a></button>
                             </td>
                             <td>
                                 <button className="btn-style" onClick={() => handleUpdate(syllabuss._id)}>Update</button>

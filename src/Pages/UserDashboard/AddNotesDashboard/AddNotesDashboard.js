@@ -24,7 +24,7 @@ const AddNotesDashboard = () => {
                 Swal.fire({
                     position: 'top-center',
                     icon: 'Success',
-                    title: 'Question Added Successfully',
+                    title: 'Note Added Successfully',
                     showConfirmButton: true,
                     timer: 4000
                 })

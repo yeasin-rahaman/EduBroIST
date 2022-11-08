@@ -71,20 +71,42 @@ const AllQuestions = () => {
                             onChange={(e) => setDepartment(e.target.value)}
                         >
 
+
+
+
+
+
+
+                            <input type="radio" id="html" name="fav_language" value="" />
+                            <label for="all" className='ps-2 form-check-label fw-bold'>All</label>
+                            <br />
+                            <input type="radio" id="cse" name="fav_language" value="cse" />
+                            <label fo r="cse" className='ps-2 form-check-label fw-bold'>CSE</label>
+                            <br />
+                            <input type="radio" id="ece" name="fav_language" value="ece" />
+                            <label for="css" className='ps-2 form-check-label fw-bold'>ECE</label>
+                            <br />
+                            <input type="radio" id="bba" name="fav_language" value="bba" />
+                            <label for="bba" className='ps-2 form-check-label fw-bold'>BBA</label>
+                            <br />
+                            <input type="radio" id="bba" name="fav_language" value="diploma" />
+                            <label for="bba" className='ps-2 form-check-label fw-bold'>DIPLOMA</label>
+
+
+
+
+
+
+
+                            {/* 
                             <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                <label className="form-check-label fw-bold" for="flexCheckDefault">
-                                    All
-                                </label>
-                            </div>
-                            <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="cse" id="flexCheckDefault" />
+                                <input className="form-check-input" type="radio" id="flexCheckDefault" />
                                 <label className="form-check-label fw-bold" for="flexCheckDefault">
                                     CSE
                                 </label>
                             </div>
                             <div className="form-check align-items-center">
-                                <input className="form-check-input" type="checkbox" value="ece" id="flexCheckDefault" />
+                                <input className="form-check-input" type="radio" value="ece" id="flexCheckDefault" />
                                 <label className="form-check-label fw-bold" for="flexCheckDefault">
                                     ECE
                                 </label>
@@ -94,7 +116,7 @@ const AllQuestions = () => {
                                 <label className="form-check-label fw-bold" for="flexCheckDefault">
                                     BBA
                                 </label>
-                            </div>
+                            </div> */}
                         </form>
 
                         <div className='mt-3'>

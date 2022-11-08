@@ -21,7 +21,7 @@ const AddLabsDashboard = () => {
             .then((result) => {
                 console.log(result)
                 Swal.fire(
-                    'Lab Question Added Successfully.',
+                    'Lab Added Successfully.',
                 )
                 reset()
             });

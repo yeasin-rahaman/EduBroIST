@@ -61,6 +61,7 @@ const AdminNotes = () => {
                         {/* <th >note Preview</th> */}
 
                         <th >Status</th>
+                        <th >View</th>
                         <th >Update</th>
                     </tr>
                 </thead>
@@ -84,6 +85,9 @@ const AdminNotes = () => {
                                         <option defaultValue="cancelled">Cancelled</option>
                                     </select>
                                 </div>
+                            </td>
+                            <td>
+                                <button className="btn-style download-btn"  ><a href={note.driveLink} target="_blank" >View</a></button>
                             </td>
                             <td>
                                 <button className="btn-style" onClick={() => handleUpdate(note._id)}>Update</button>
