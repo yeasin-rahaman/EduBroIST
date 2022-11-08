@@ -32,7 +32,7 @@ const Contact = () => {
                 <Col lg={6}>
                     <div className="contact-left my-5">
                         <h3>Contact Us</h3>
-                        <p>If you are looking for a Question-oriented approach, you can use this one from Edu-Bro's Contact Us page.</p>
+                        <p>If you have any queries contact us.</p>
                         <div className="single-contact">
                             <span>Call us</span>
                             <p>(+880)1675440454</p>

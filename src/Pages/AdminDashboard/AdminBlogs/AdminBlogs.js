@@ -30,7 +30,7 @@ const AdminBlogs = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'Blog Status Update',
+            title: 'Blog Status Updated',
             showConfirmButton: true,
             timer: 4000
         })
