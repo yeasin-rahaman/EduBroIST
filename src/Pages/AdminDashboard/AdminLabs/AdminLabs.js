@@ -30,7 +30,7 @@ const AdminLab = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'Lab Status Update',
+            title: 'Lab Status Updated',
             showConfirmButton: true,
             timer: 4000
         })

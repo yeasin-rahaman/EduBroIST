@@ -30,7 +30,7 @@ const AdminSyllabus = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'Syllabus Status Update',
+            title: 'Syllabus Status Updated',
             showConfirmButton: true,
             timer: 4000
         })

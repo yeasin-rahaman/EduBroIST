@@ -34,7 +34,7 @@ const AdminBooks = () => {
         Swal.fire({
             position: 'top-center',
             icon: 'Success',
-            title: 'Books Status Update',
+            title: 'Books Status Updated',
             showConfirmButton: true,
             timer: 4000
         })

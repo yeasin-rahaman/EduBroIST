@@ -32,7 +32,7 @@ const AdminQuestion = () => {
                 Swal.fire({
                     position: 'top-center',
                     icon: 'Success',
-                    title: 'Assignment Status Update',
+                    title: 'Question Status Updated',
                     showConfirmButton: true,
                     timer: 4000
                 })
