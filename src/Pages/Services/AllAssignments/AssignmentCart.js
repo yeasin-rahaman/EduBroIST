@@ -64,7 +64,7 @@ const AssignmentCart = ({ data }) => {
 
                         <div className='buttons' >
                             <button className="btn-style download-btn " ><a href={download} className="">Download</a></button>
-                            <Link to={`/question-details/${_id}`}><button className="btn-style" >View Submission</button></Link>
+                            <Link to={`/assignment-details/${_id}`}><button className="btn-style" >View Submission</button></Link>
                         </div>
                     </div>
 
