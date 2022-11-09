@@ -3,8 +3,6 @@ import './MyQuestions.css';
 
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
-
 
 const MyQuestions = () => {
 
@@ -25,23 +23,7 @@ const MyQuestions = () => {
     // delete method  
 
     const handleQuestionDeleteRequest = id => {
-        const proceed = Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'Your question has been deleted.',
-                    'success'
-                )
-            }
-        })
+        const proceed = window.confirm("You won't be able to revert this!")
         if (proceed) {
             const url = `https://edubro.herokuapp.com/deleteQuestion/${id}`;
             fetch(url, {

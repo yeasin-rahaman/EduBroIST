@@ -3,7 +3,6 @@ import './MyQuestions.css';
 
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../hooks/useFirebase';
-import { Swal } from 'sweetalert2/dist/sweetalert2';
 
 
 const MyAssignment = () => {
@@ -25,23 +24,24 @@ const MyAssignment = () => {
     // delete method  
 
     const handleAssignmentDeleteRequest = id => {
-        const proceed = Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'Your assignment has been deleted.',
-                    'success'
-                )
-            }
-        })
+        // const proceed = Swal.fire({
+        //     title: 'Are you sure?',
+        //     text: "You won't be able to revert this!",
+        //     icon: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: 'Yes, delete it!'
+        // }).then((result) => {
+        //     if (result.isConfirmed) {
+        //         Swal.fire(
+        //             'Deleted!',
+        //             'Your assignment has been deleted.',
+        //             'success'
+        //         )
+        //     }
+        // })
+        const proceed = window.process()
         if (proceed) {
             const url = `https://edubro.herokuapp.com/deleteAssignment/${id}`;
             fetch(url, {
