@@ -9,7 +9,7 @@ const EditProfile = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.complete = true
-        fetch(`https://edubro.herokuapp.com/updateUser`, {
+        fetch(`https://edubroist.onrender.com/updateUser`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

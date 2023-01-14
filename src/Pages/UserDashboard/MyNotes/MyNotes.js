@@ -8,7 +8,7 @@ const MyNotes = () => {
     const [notes, setNotes] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/mynotes/${user?.email}`)
+        fetch(`https://edubroist.onrender.com/mynotes/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setNotes(data));
     }, [user?.email, notes]);
@@ -16,7 +16,7 @@ const MyNotes = () => {
     const handleNoteDeleteRequest = id => {
         const proceed = window.confirm("You won't be able to revert this!")
         if (proceed) {
-            const url = `https://edubro.herokuapp.com/deleteNote/${id}`;
+            const url = `https://edubroist.onrender.com/deleteNote/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

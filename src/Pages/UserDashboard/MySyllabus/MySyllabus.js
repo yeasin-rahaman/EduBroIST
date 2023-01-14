@@ -9,7 +9,7 @@ const MySyllabus = () => {
     const [syllabus, setSyllabus] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/mySyllabus/${user?.email}`)
+        fetch(`https://edubroist.onrender.com/mySyllabus/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setSyllabus(data));
     }, [user?.email, syllabus]);
@@ -20,7 +20,7 @@ const MySyllabus = () => {
 
         const proceed = window.confirm("You won't be able to revert this!")
         if (proceed) {
-            const url = `https://edubro.herokuapp.com/deleteSyllabus/${id}`;
+            const url = `https://edubroist.onrender.com/deleteSyllabus/${id}`;
             fetch(url, {
                 method: 'DELETE'
 

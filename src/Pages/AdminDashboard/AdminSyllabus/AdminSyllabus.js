@@ -12,7 +12,7 @@ const AdminSyllabus = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/getAllSyllabus`)
+        fetch(`https://edubroist.onrender.com/getAllSyllabus`)
             .then((res) => res.json())
             .then((data) => setSyllabus(data));
     }, [user?.email]);
@@ -20,7 +20,7 @@ const AdminSyllabus = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://edubro.herokuapp.com/SyllabusStatusUpdate/${id}`, {
+        fetch(`https://edubroist.onrender.com/SyllabusStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

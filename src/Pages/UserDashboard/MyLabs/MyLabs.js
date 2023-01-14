@@ -9,7 +9,7 @@ const MyLabs = () => {
     const [labs, setLabs] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/myLabs/${user?.email}`)
+        fetch(`https://edubroist.onrender.com/myLabs/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
     }, [user?.email, labs]);
@@ -18,7 +18,7 @@ const MyLabs = () => {
     const handleLabDeleteRequest = id => {
         const proceed = window.confirm("You won't be able to revert this!")
         if (proceed) {
-            const url = `https://edubro.herokuapp.com/deleteLab/${id}`;
+            const url = `https://edubroist.onrender.com/deleteLab/${id}`;
             fetch(url, {
                 method: 'DELETE'
 

@@ -27,14 +27,14 @@ const AllQuestions = () => {
     // checkbox er value true or false return kore
 
     // useEffect(() => {
-    //     fetch('https://edubro.herokuapp.com/allQuestions')
+    //     fetch('https://edubroist.onrender.com/allQuestions')
     //         .then(res => res.json())
     //         .then(data => setQuestions(data))
     // }, [])
 
     useEffect(() => {
         console.log(department, year, semester, search)
-        fetch(`https://edubro.herokuapp.com/allQuestions?page=${page}&&size=${size}&&department=${department}&&year=${year}&&semester=${semester}&&search=${search}`)
+        fetch(`https://edubroist.onrender.com/allQuestions?page=${page}&&size=${size}&&department=${department}&&year=${year}&&semester=${semester}&&search=${search}`)
             .then(res => res.json())
             .then(data => {
                 setQuestions(data.allQuestions)

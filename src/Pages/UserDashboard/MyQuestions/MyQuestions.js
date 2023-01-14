@@ -11,7 +11,7 @@ const MyQuestions = () => {
     const [questions, setQuestions] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/myQuestions/${user?.email}`)
+        fetch(`https://edubroist.onrender.com/myQuestions/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
@@ -25,7 +25,7 @@ const MyQuestions = () => {
     const handleQuestionDeleteRequest = id => {
         const proceed = window.confirm("You won't be able to revert this!")
         if (proceed) {
-            const url = `https://edubro.herokuapp.com/deleteQuestion/${id}`;
+            const url = `https://edubroist.onrender.com/deleteQuestion/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

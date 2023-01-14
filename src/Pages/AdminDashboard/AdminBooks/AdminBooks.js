@@ -15,7 +15,7 @@ const AdminBooks = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/getAllBooks`)
+        fetch(`https://edubroist.onrender.com/getAllBooks`)
             .then((res) => res.json())
             .then((data) => setBooks(data));
     }, [user?.email]);
@@ -23,7 +23,7 @@ const AdminBooks = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://edubro.herokuapp.com/BookStatusUpdate/${id}`, {
+        fetch(`https://edubroist.onrender.com/BookStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

@@ -7,7 +7,7 @@ const AllLabs = () => {
     const [labs, setLabs] = useState([]);
 
     useEffect(() => {
-        fetch('https://edubro.herokuapp.com/allLabs')
+        fetch('https://edubroist.onrender.com/allLabs')
             .then(res => res.json())
             .then(data => setLabs(data))
     }, [labs])

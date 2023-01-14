@@ -10,7 +10,7 @@ const UserProfile = () => {
     const [userInfo, setUserInfo] = useState({})
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/users/${user.email}`)
+        fetch(`https://edubroist.onrender.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setUserInfo(data)

@@ -6,7 +6,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         // console.log(data)
-        fetch('https://edubro.herokuapp.com/users/admin', {
+        fetch('https://edubroist.onrender.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

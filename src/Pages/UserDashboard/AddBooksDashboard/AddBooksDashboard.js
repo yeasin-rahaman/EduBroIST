@@ -12,7 +12,7 @@ const AddBooksDashboard = () => {
         data.email = user.email
         data.status = 'Pending'
 
-        fetch(`https://edubro.herokuapp.com/postBooks`, {
+        fetch(`https://edubroist.onrender.com/postBooks`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

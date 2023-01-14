@@ -14,7 +14,7 @@ const QuestionDetails = () => {
     console.log('test', viewUrl)
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/question/${id}`)
+        fetch(`https://edubroist.onrender.com/question/${id}`)
             .then(res => res.json())
             .then(data => {
                 setQuestion(data)

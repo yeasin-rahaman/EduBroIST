@@ -25,7 +25,7 @@ const AddBlogsDashboard = () => {
         data.status = 'Pending'
 
 
-        fetch(`https://edubro.herokuapp.com/postBlogs`, {
+        fetch(`https://edubroist.onrender.com/postBlogs`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

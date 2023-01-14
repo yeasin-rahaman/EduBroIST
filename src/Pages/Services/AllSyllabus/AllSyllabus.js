@@ -6,7 +6,7 @@ const AllSyllabus = () => {
 
     const [syllabus, setSyllabus] = useState([]);
     useEffect(() => {
-        fetch('https://edubro.herokuapp.com/allSyllabus')
+        fetch('https://edubroist.onrender.com/allSyllabus')
             .then(res => res.json())
             .then(data => setSyllabus(data))
     }, [])

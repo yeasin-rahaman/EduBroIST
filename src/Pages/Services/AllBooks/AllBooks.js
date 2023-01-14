@@ -6,7 +6,7 @@ const AllBooks = () => {
 
     const [books, setBooks] = useState([]);
     useEffect(() => {
-        fetch('https://edubro.herokuapp.com/allBooks')
+        fetch('https://edubroist.onrender.com/allBooks')
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])

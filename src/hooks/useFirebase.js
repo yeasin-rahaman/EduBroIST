@@ -113,7 +113,7 @@ const useFirebase = () => {
   // save user to database 
   const sendUserInfoToDb = (email, displayName, method) => {
     const user = { email, displayName }
-    fetch('https://edubro.herokuapp.com/users', {
+    fetch('https://edubroist.onrender.com/users', {
       method: method,
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user)
@@ -141,7 +141,7 @@ const useFirebase = () => {
 
   //ADMIN CONDITIONAL DATALOAD
   useEffect(() => {
-    fetch(`https://edubro.herokuapp.com/users/${user.email}`)
+    fetch(`https://edubroist.onrender.com/users/${user.email}`)
       .then(res => res.json())
       .then(data => {
         setAdmin(data?.role)

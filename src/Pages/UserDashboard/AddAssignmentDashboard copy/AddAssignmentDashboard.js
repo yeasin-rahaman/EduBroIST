@@ -14,7 +14,7 @@ const AddAssignmentDashboard = () => {
         data.status = 'approved'
         data.date = today
 
-        fetch(`https://edubro.herokuapp.com/postAssignment`, {
+        fetch(`https://edubroist.onrender.com/postAssignment`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

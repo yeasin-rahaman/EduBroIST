@@ -12,7 +12,7 @@ const AdminLab = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/getAllLabs`)
+        fetch(`https://edubroist.onrender.com/getAllLabs`)
             .then((res) => res.json())
             .then((data) => setLabs(data));
     }, []);
@@ -20,7 +20,7 @@ const AdminLab = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://edubro.herokuapp.com/labsStatusUpdate/${id}`, {
+        fetch(`https://edubroist.onrender.com/labsStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

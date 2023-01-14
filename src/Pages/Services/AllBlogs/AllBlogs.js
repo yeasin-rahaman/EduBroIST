@@ -6,7 +6,7 @@ const AllBlogs = () => {
 
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        fetch('https://edubro.herokuapp.com/allBlogs')
+        fetch('https://edubroist.onrender.com/allBlogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])

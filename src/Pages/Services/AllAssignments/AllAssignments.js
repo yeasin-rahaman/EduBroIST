@@ -27,13 +27,13 @@ const AllAssignments = () => {
     // checkbox er value true or false return kore
 
     // useEffect(() => {
-    //     fetch('https://edubro.herokuapp.com/allassignments')
+    //     fetch('https://edubroist.onrender.com/allassignments')
     //         .then(res => res.json())
     //         .then(data => setassignments(data))
     // }, [])
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/allAssignments?page=${page}&&size=${size}&&department=${department}&&semester=${semester}&&search=${search}`)
+        fetch(`https://edubroist.onrender.com/allAssignments?page=${page}&&size=${size}&&department=${department}&&semester=${semester}&&search=${search}`)
             .then(res => res.json())
             .then(data => {
                 setAssignments(data.allAssignments)

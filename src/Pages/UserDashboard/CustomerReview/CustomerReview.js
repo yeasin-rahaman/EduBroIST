@@ -19,7 +19,7 @@ const CustomerReview = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        fetch("https://edubro.herokuapp.com/review", {
+        fetch("https://edubroist.onrender.com/review", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

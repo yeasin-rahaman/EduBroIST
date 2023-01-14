@@ -29,7 +29,7 @@ const QuestionDetailsSolve = () => {
         data.code = question.code
         data.department = question.department
 
-        fetch(`https://edubro.herokuapp.com/addQuestionSolve`, {
+        fetch(`https://edubroist.onrender.com/addQuestionSolve`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -49,7 +49,7 @@ const QuestionDetailsSolve = () => {
     // get question 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/question/${id}`)
+        fetch(`https://edubroist.onrender.com/question/${id}`)
             .then(res => res.json())
             .then(data => {
                 setQuestion(data)
@@ -61,7 +61,7 @@ const QuestionDetailsSolve = () => {
 
     // get solve 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/questionSolve/${id}`)
+        fetch(`https://edubroist.onrender.com/questionSolve/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setQuestionSolves(data)
@@ -80,7 +80,7 @@ const QuestionDetailsSolve = () => {
                 }
             })
         if (proceed) {
-            const url = `https://edubro.herokuapp.com/deleteQuestionSolve/${id}`;
+            const url = `https://edubroist.onrender.com/deleteQuestionSolve/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

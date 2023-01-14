@@ -35,7 +35,7 @@ const AssignmentSolve = () => {
 
         // post solve 
 
-        fetch(`https://edubro.herokuapp.com/addAssignmentSolve`, {
+        fetch(`https://edubroist.onrender.com/addAssignmentSolve`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -58,7 +58,7 @@ const AssignmentSolve = () => {
 
     // get assignment 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/assignment/${id}`)
+        fetch(`https://edubroist.onrender.com/assignment/${id}`)
             .then(res => res.json())
             .then(data => {
                 setAssignment(data)
@@ -70,7 +70,7 @@ const AssignmentSolve = () => {
 
     // get solve 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/assignmentSolve/${id}`)
+        fetch(`https://edubroist.onrender.com/assignmentSolve/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setAssignmentSolves(data)
@@ -91,7 +91,7 @@ const AssignmentSolve = () => {
             })
 
         if (proceed) {
-            const url = `https://edubro.herokuapp.com/deleteAssignmentSolve/${id}`;
+            const url = `https://edubroist.onrender.com/deleteAssignmentSolve/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

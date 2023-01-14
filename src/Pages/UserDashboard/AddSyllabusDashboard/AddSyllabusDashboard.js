@@ -12,7 +12,7 @@ const AddSyllabusDashboard = () => {
     data.email = user.email;
     data.status = "Pending";
 
-    fetch(`https://edubro.herokuapp.com/postSyllabus`, {
+    fetch(`https://edubroist.onrender.com/postSyllabus`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

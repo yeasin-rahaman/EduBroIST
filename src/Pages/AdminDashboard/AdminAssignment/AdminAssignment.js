@@ -11,7 +11,7 @@ const AdminAssignment = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/getAllAssignments`)
+        fetch(`https://edubroist.onrender.com/getAllAssignments`)
             .then((res) => res.json())
             .then((data) => setAssignments(data));
     }, []);
@@ -19,7 +19,7 @@ const AdminAssignment = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://edubro.herokuapp.com/AssignmentStatusUpdate/${id}`, {
+        fetch(`https://edubroist.onrender.com/AssignmentStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

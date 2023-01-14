@@ -13,7 +13,7 @@ const AdminQuestion = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/getAllQuestions`)
+        fetch(`https://edubroist.onrender.com/getAllQuestions`)
             .then((res) => res.json())
             .then((data) => setQuestions(data));
     }, []);
@@ -21,7 +21,7 @@ const AdminQuestion = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://edubro.herokuapp.com/QuestionStatusUpdate/${id}`, {
+        fetch(`https://edubroist.onrender.com/QuestionStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

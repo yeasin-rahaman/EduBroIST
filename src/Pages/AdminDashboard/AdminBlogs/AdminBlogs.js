@@ -12,7 +12,7 @@ const AdminBlogs = () => {
 
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/getAllBlogs`)
+        fetch(`https://edubroist.onrender.com/getAllBlogs`)
             .then((res) => res.json())
             .then((data) => setBlogs(data));
     }, [user?.email]);
@@ -20,7 +20,7 @@ const AdminBlogs = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`https://edubro.herokuapp.com/BlogStatusUpdate/${id}`, {
+        fetch(`https://edubroist.onrender.com/BlogStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

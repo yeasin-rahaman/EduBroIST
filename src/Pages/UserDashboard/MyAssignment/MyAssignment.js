@@ -12,7 +12,7 @@ const MyAssignment = () => {
     const [assignments, setAssignments] = useState([])
 
     useEffect(() => {
-        fetch(`https://edubro.herokuapp.com/myAssignments/${user?.email}`)
+        fetch(`https://edubroist.onrender.com/myAssignments/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
@@ -43,7 +43,7 @@ const MyAssignment = () => {
         // })
         const proceed = window.process()
         if (proceed) {
-            const url = `https://edubro.herokuapp.com/deleteAssignment/${id}`;
+            const url = `https://edubroist.onrender.com/deleteAssignment/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
